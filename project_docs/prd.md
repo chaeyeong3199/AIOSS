@@ -1,207 +1,157 @@
-# PRD (Product Requirements Document)
-
-## 1. 제품 개요
-
-### 1.1 제품명 (가칭)
-**LightGauss Optimizer**
-
-### 1.2 한 줄 설명
-GPS‑Gaussian 모델을 대상으로 불필요한 가우시안 제거와 중요 영역 샘플링을 결합해 메모리 사용을 줄이고 렌더링 속도를 높이는 경량화/가속화 파이프라인.
-
-### 1.3 배경
-- 초실감 입체 공간 미디어의 가상 뷰 합성에 GPS‑Gaussian이 널리 사용되지만, 많은 수의 가우시안이 메모리와 연산을 잡아먹음.
-- 모바일, VR, AR 등의 제한된 하드웨어에서 실시간 렌더링을 구현하기 위해선 모델 경량화가 필수.
-- 기존 최적화 기법은 렌더링 품질 저하 없이 메모리를 줄이는 데 한계가 있음.
+# LightGauss Optimizer  
+### GPS-Gaussian 경량화 및 가속화 연구
 
 ---
 
-## 2. 문제 정의
-1. GPS‑Gaussian에 포함된 수백만 개의 가우시안이 VRAM 병목을 유발한다.
-2. 전체 씬을 고르게 샘플링하면 핵심 디테일이 희석되어 렌더링 효율이 떨어진다.
-3. 경량화를 위한 프루닝과 효율 샘플링을 통합한 통합 파이프라인이 부재하다.
+## 1. Background
+
+최근 **3D Gaussian Splatting** 기반 뷰 합성 기법은 실시간 렌더링과 높은 시각적 품질을 동시에 달성하며 주목받고 있다.  
+특히 *3D Gaussian Splatting for Real-Time Radiance Field Rendering (SIGGRAPH 2023)*은 기존 NeRF 대비 매우 빠른 렌더링 성능을 보여주었다.
+
+이후 확장된 방식인 **GPS-Gaussian**은 사람 중심 3D 재구성에서 높은 품질을 제공하지만 다음과 같은 한계를 가진다:
+
+- 수백만 개 이상의 Gaussian → 높은 VRAM 사용량
+- 모바일/VR 환경에서 실시간 렌더링 어려움
+- 비효율적인 전체 영역 균일 처리
+
+기존 연구에서는 다음과 같은 방법이 제안되었다:
+
+- Density 기반 Gaussian pruning
+- LOD(Level of Detail) 기반 최적화
+- Importance sampling 기반 렌더링
+
+하지만  
+> **Pruning + Importance Sampling을 통합한 end-to-end 최적화 구조는 부족하다.**
 
 ---
 
-## 3. 목표 및 성공 기준
+## 2. Research Questions & Hypotheses
 
-### 4.1 비즈니스 목표
-- VR 및 모바일 디바이스에서도 고품질 뷰 합성 가능
-- 클라우드 렌더링 비용 절감
-- 개발자/엔지니어의 모델 튜닝 시간 단축
+### RQ1. Gaussian pruning은 렌더링 성능을 얼마나 개선하는가?
 
-### 4.2 제품 목표 (MVP)
-- Gaussian pruning 알고리즘 구현 및 검증
-- 디테일 기반 importance sampling 스키마 개발
-- 두 기법을 함께 적용한 단일 학습·추론 파이프라인 완성
-
-### 4.3 핵심 성과 지표 (KPI)
-- 메모리 사용량: 원본 대비 ≥50% 감소
-- 렌더링 프레임율: 동일 하드웨어에서 ≥2× 향상
-- 시각적 품질: PSNR ≥ 30dB, SSIM ≥ 0.95 유지
+- H1-1: 중요도 기반 pruning은 ≥50% 메모리 감소를 달성할 수 있다.
+- H1-2: pruning 이후에도 PSNR 30dB 이상 유지 가능하다.
+- H1-3: 학습 기반 pruning이 단순 threshold 방식보다 품질 유지에 유리하다.
 
 ---
 
-## 4. 사용자 및 이해관계자
+### RQ2. Importance sampling은 렌더링 효율을 향상시키는가?
 
-### 5.1 주요 사용자
-- 그래픽 엔진 개발자
-- VR/AR 애플리케이션 개발팀
-- 연구기관 시각화 연구자
-
-### 5.2 이해관계자
-- 제품 매니저
-- 시스템 아키텍트
-- QA/테스팅 팀
-
-### 5.3 사용자 시나리오
-1. 개발자는 원본 GPS‑Gaussian 모델을 가져와 프루닝/샘플링 파이프라인을 적용한다.
-2. 엔진에 통합된 모델을 테스트 장치에 배포하여 프레임율과 메모리 사용량을 측정한다.
-3. 시각적 품질을 비교하고, 필요 시 파라미터를 조정하여 반복적으로 최적화한다.
+- H2-1: 중요 영역 집중 샘플링은 동일 샘플 수 대비 품질을 향상시킨다.
+- H2-2: 에러 기반 sampling은 균일 샘플링보다 SSIM이 높다.
+- H2-3: 장면 복잡도에 따라 최적 sampling 전략이 달라진다.
 
 ---
 
-## 5. 범위 정의
+### RQ3. Pruning + Sampling 통합 시 시너지 효과가 존재하는가?
 
-### 6.1 포함 범위 (In Scope)
-- GPS‑Gaussian 모델 구조 분석
-- Gaussian pruning 알고리즘 설계 및 구현
-- 핵심 영역 importance sampling 설계
-- 파이프라인 통합 및 평가 스크립트
-- 성능 측정 및 품질 검증
-
-### 6.2 제외 범위 (Out of Scope)
-- 다른 NeRF/NTrees 모델에 대한 일반화
-- 실시간 엔진 내 직접 통합(엔진 별 커스터마이징)
-- 하드웨어 수준 최적화(예: FPGA)
+- H3-1: 두 기법 결합 시 FPS가 ≥2× 향상된다.
+- H3-2: pruning으로 인한 정보 손실을 sampling이 보완한다.
+- H3-3: 통합 파이프라인이 더 나은 speed-quality tradeoff를 가진다.
 
 ---
 
-## 6. 기능 요구사항
+## 3. Key Performance Indicators (KPI)
 
-| ID | 요구사항 | 우선순위 | 수용 기준 |
-|---|---|---|---|
-| FR-01 | 원본 GPS‑Gaussian 모델 로딩/파싱 | Must | 다양한 모델 포맷 지원 |
-| FR-02 | Gaussian pruning 모듈 구현 | Must | 메모리 감소량 ≥ 30% 측정 |
-| FR-03 | Importance sampling 모듈 구현 | Must | 핵심 디테일 재현율 ≥ 90% |
-| FR-04 | 통합 파이프라인 스크립트 | Must | 단일 명령으로 최적화 수행 |
-| FR-05 | 품질 측정 도구 (PSNR/SSIM 계산) | Should | 자동 보고서 생성 |
-| FR-06 | 메모리/속도 벤치마크 스위트 | Should | 결과를 그래프/CSV로 저장 |
-| FR-07 | 모델 버전 관리 지원 | Could | Git LFS 또는 유사 시스템과 연동 |
+### 3.1 Memory Efficiency
+- VRAM 사용량 ≥ **50% 감소**
+- Gaussian 개수 감소율
+- 모델 저장 용량 감소
 
----
+### 3.2 Rendering Performance
+- FPS ≥ **2× 향상**
+- Rendering latency 감소
+- Throughput 증가
 
-## 7. 비기능 요구사항
+### 3.3 Visual Quality
+- PSNR ≥ **30dB**
+- SSIM ≥ **0.95**
+- LPIPS 최소화
 
-### 8.1 성능
-- 최적화 파이프라인 실행 시간: 1 모델당 ≤ 10분
-- 벤치마크 측정 정확도: ±2% 이내
-
-### 8.2 안정성/운영성
-- 파이프라인 재실행 시 동일 결과 재현
-- 로그 및 오류 메시지 명확성
-
-### 8.3 보안/개인정보
-- 외부 모델 파일에 대한 무결성 검사
-
-### 8.4 확장성
-- 향후 다른 프루닝/샘플링 기법 추가 가능하도록 모듈화
+### 3.4 Analysis Metrics
+- Pruning ratio vs Quality
+- Sampling density vs Performance
+- Pareto frontier (Speed vs Quality)
 
 ---
 
-## 8. 데이터 요구사항
+## 4. Scope
 
-### 9.1 데이터 소스
-- 훈련/테스트용 GPS‑Gaussian 씬 데이터셋
-- 렌더링을 위한 샘플 뷰 이미지
+본 연구는 다음 영역에 집중한다:
 
-### 9.2 데이터 규모 (MVP 목표)
-- 씬 수: 최소 100개
-- 가우시안 수: 모델당 최대 수백만
+- Gaussian Splatting 기반 렌더링 최적화
+- 3D Human Reconstruction
+- 메모리 효율적인 3D Representation
 
-### 9.3 라벨 스키마
-- 가우시안 중요도 점수 (0~1)
-- 디테일 영역 마스크
-
-### 9.4 데이터 품질 기준
-- 입력 모델 손상/누락 없음
-- 벤치마크 결과 재현성 확보
+적용 분야:
+- VR / AR
+- Mobile Rendering
+- Real-time Graphics
 
 ---
 
-## 9. 모델 요구사항 및 기술 접근
+## 5. Method Overview
 
-### 10.1 모델 구조 (MVP)
-- 프루닝: 간단한 중요도 기반 제거 또는 학습된 마스크
-- 샘플링: 렌더링 에러 기반 가중치 샘플링
-- 후처리: 제거된 가우시안 보정 필터
+### Pipeline
 
-### 10.2 학습 전략
-- 가우시안 중요도는 렌더링 기여도 측정으로 계산
-- 증강: 다양한 카메라 각도/조명 시뮬레이션
-- 검증: 원본과 최적화 모델간 뷰 일치도 비교
+Input (GPS-Gaussian)
+↓
+[1] Importance Estimation
+↓
+[2] Gaussian Pruning
+↓
+[3] Importance Sampling
+↓
+[4] Rendering
+↓
+Evaluation (FPS / PSNR / SSIM)
 
-### 10.3 배포 전략
-- 최적화 스크립트를 파이썬/쉘 기반 CLI 제공
-- 결과물 모델을 엔진에 손쉽게 로드할 수 있는 포맷으로 저장
-
----
-
-## 10. 평가 계획
-
-### 11.1 오프라인 평가
-- 메모리 사용량, 프레임 속도, PSNR/SSIM 측정
-- 프루닝 비율에 따른 품질 변화 분석
-
-### 11.2 온라인/파일럿 평가
-- 주요 타깃 디바이스(VR 헤드셋, 모바일)에서 실험
-- 사용자(개발자) 만족도 설문
-
-### 11.3 수용(Release) 기준
-- KPI 목표 90% 이상 달성
-- 주요 디바이스에서 안정적으로 실행
 
 ---
 
-## 11. MLOps 및 운영 요구사항
-- 실험 기록: 파이프라인 파라미터 및 결과 자동 저장
-- 버전 관리: 모델/스크립트 Git 트래킹
-- 모니터링: 프루닝/샘플링 적용 전후 성능 차이 알림
-- 재학습 정책: 새 데이터나 기법 등장 시 정기 업데이트
+### Core Ideas
+
+#### Importance Score
+- 렌더링 기여도 기반 계산
+- opacity / gradient / visibility 활용
+
+#### Pruning
+- low-importance Gaussian 제거
+- adaptive threshold 적용
+
+#### Sampling
+- high-detail 영역 집중 샘플링
+- error-driven weighting
 
 ---
 
-## 12. 일정 (MVP 기준 12주)
+## 6. Dataset
 
-| 기간 | 마일스톤 | 산출물 |
-|---|---|---|
-| 1~2주 | 요구사항 정리/데이터 수집 | 기술 사양서, 샘플 모델 |
-| 3~5주 | 프루닝·샘플링 알고리즘 개발 | 알고리즘 문서, 초기 코드 |
-| 6~8주 | 통합 파이프라인 구현/테스트 | 최적화 스크립트, 벤치마크 |
-| 9~10주 | 성능 평가/품질 검증 | 평가 보고서 |
-| 11주 | 디바이스 파일럿 테스트 | 파일럿 결과 |
-| 12주 | 개선 및 문서화 | 릴리즈 후보, 사용 가이드 |
+### Primary Dataset
+- THuman2.0
 
----
+### Why THuman2.0?
+- 고품질 3D human 데이터
+- 다양한 pose 및 shape 포함
+- Gaussian 기반 실험에 적합
 
-## 13. 리스크 및 대응
-
-| 리스크 | 영향 | 대응 방안 |
-|---|---|---|
-| 알고리즘이 품질 손실을 초래 | 적용 거부 | 파라미터 조정, 후처리 보정 |
-| 데이터셋이 다양성 부족 | 일반화 실패 | 외부 씬 추가, 데이터 증강 |
-| 메모리/속도 측정 오차 | KPI 미달 | 측정 도구 개선 |
+### Future Plan
+- 추가 human dataset 적용
+- synthetic / augmented data 활용
+- generalization 성능 검증
 
 ---
 
-## 14. 산출물
-- 최적화 모델 코드 및 파이프라인
-- 성능 평가 리포트
-- 사용/통합 가이드
-- 실험 기록 데이터
+## 7. Open Issues
+
+1. Pruning threshold 결정 방식 (heuristic vs learning-based)
+2. Importance score 정의 (opacity vs gradient vs hybrid)
+3. Sampling 전략 (static vs adaptive)
 
 ---
 
-## 16. 오픈 이슈
-1. 프루닝 임계값 결정 전략 확정
-2. 중요도 계산을 위한 비용 함수 정의
-3. 타깃 디바이스 목록 최종화
+## 8. Expected Contributions
+
+- Gaussian pruning + importance sampling 통합 파이프라인 제안
+- 메모리 효율성과 렌더링 성능 동시 개선
+- real-time 환경에서 적용 가능한 최적화 방법 제시
