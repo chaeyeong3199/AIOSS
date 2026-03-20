@@ -1,5 +1,5 @@
 # LightGauss Optimizer  
-### GPS-Gaussian 경량화 및 가속화 연구
+### 동적 인체 렌더링 최적화를 위한 3D Gaussian Splatting 경량화 및 샘플링 기법 연구
 
 ---
 
