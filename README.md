@@ -1,5 +1,5 @@
 # 🚀 GPS-Gaussian Optimization  
-### Gaussian Pruning + Importance Sampling 기반 3D Gaussian Splatting 경량화
+### 동적 인체 렌더링을 위한 3D Gaussian Splatting 기반 경량화 및 샘플링 기법 연구
 
 ---
 
@@ -15,8 +15,8 @@ Gaussian Pruning과 Importance Sampling 기법을 결합하여
 
 **목표 성능**
 
-- 메모리 사용량 **50% 이상 감소**
-- 렌더링 속도 **2배 이상 향상**
+- 메모리 사용량 **25% 이상 감소**
+- 렌더링 속도 **1.5배 이상 향상**
 - 원본 화질 **PSNR / SSIM 유지**
 
 ---

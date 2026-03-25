@@ -87,20 +87,28 @@ jobs:
 
     - name: 5. Generate Weekly Report Issue (과제 요구사항 4번)
       if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        LT=${LEAD_TIME:-0}
-        DF=${DF_COUNT:-0}
-        CFR=${CFR_RESULT:-0.0}
-        MTTR=0
-        
-        gh issue create \
-          --title "📊 주간 DORA Metrics 리포트 ($(date +'%Y-%m-%d'))" \
-          --body "이번 주 소프트웨어 전달 성능 지표(DORA) 수집 결과입니다.
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          const lt = process.env.LEAD_TIME || '0';
+          const df = process.env.DF_COUNT || '0';
+          const cfr = process.env.CFR_RESULT || '0.0';
+          const mttr = '0';
           
-          - **Lead Time for Changes**: ${LT}초
-          - **Deployment Frequency**: ${DF}회
-          - **Change Failure Rate**: ${CFR}
-          - **MTTR**: ${MTTR}초
+          const today = new Date().toISOString().split('T')[0];
+          
+          const body = `이번 주 소프트웨어 전달 성능 지표(DORA) 수집 결과입니다.\n\n` +
+            `- **Lead Time for Changes**: ${lt}초\n` +
+            `- **Deployment Frequency**: ${df}회\n` +
+            `- **Change Failure Rate**: ${cfr}\n` +
+            `- **MTTR**: ${mttr}초\n\n` +
+            `상세한 원본 데이터는 이번 Action 실행 결과의 Artifact(\`dora_metrics.json\`)에서 확인할 수 있습니다.`;
+          
+          await github.rest.issues.create({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            title: `[Weekly DORA] ${today}`,
+            body: body
+          });
           
