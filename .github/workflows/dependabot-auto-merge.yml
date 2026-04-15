@@ -1,0 +1,66 @@
+name: Dependabot Auto Merge
+
+on:
+  # pull_request_target is required to allow write permissions with GITHUB_TOKEN for approve/auto-merge actions.
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  auto-merge:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate Dependabot PR
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request;
+
+            if (pr.user.login !== 'dependabot[bot]' || !pr.head.ref.startsWith('dependabot/')) {
+              core.setFailed('Only Dependabot PRs are allowed for this workflow.');
+              return;
+            }
+
+            if (pr.draft) {
+              core.setFailed('Draft PRs are not eligible for auto-merge.');
+              return;
+            }
+
+      - name: Auto-approve Dependabot PR
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.rest.pulls.createReview({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              event: 'APPROVE'
+            });
+
+      - name: Enable auto-merge
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            await github.graphql(
+              `mutation($pullRequestId: ID!) {
+                enablePullRequestAutoMerge(input: {
+                  pullRequestId: $pullRequestId,
+                  mergeMethod: SQUASH
+                }) {
+                  pullRequest {
+                    number
+                  }
+                }
+              }`,
+              {
+                pullRequestId: context.payload.pull_request.node_id
+              }
+            );
