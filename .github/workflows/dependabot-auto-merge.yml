@@ -1,7 +1,7 @@
 name: Dependabot Auto Merge
 
 on:
-  # pull_request_target is required to allow write permissions with GITHUB_TOKEN for approve/auto-merge actions.
+  # pull_request_target is required to allow write permissions for Dependabot auto-merge handling.
   pull_request_target:
     types: [opened, synchronize, reopened]
 
@@ -13,12 +13,14 @@ jobs:
   auto-merge:
     if: github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
+    env:
+      AUTO_MERGE_TOKEN: ${{ secrets.PULL_REQUEST_TOKEN || secrets.PR_TOKEN || secrets.GITHUB_TOKEN }}
 
     steps:
       - name: Validate Dependabot PR
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ env.AUTO_MERGE_TOKEN }}
           script: |
             const pr = context.payload.pull_request;
 
@@ -33,9 +35,10 @@ jobs:
             }
 
       - name: Auto-approve Dependabot PR
+        if: ${{ secrets.PULL_REQUEST_TOKEN != '' || secrets.PR_TOKEN != '' }}
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ env.AUTO_MERGE_TOKEN }}
           script: |
             await github.rest.pulls.createReview({
               owner: context.repo.owner,
@@ -47,7 +50,7 @@ jobs:
       - name: Enable auto-merge
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ env.AUTO_MERGE_TOKEN }}
           script: |
             await github.graphql(
               `mutation($pullRequestId: ID!) {
