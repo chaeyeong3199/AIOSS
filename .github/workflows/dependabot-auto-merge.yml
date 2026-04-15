@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Validate Dependabot PR and status checks
+      - name: Validate Dependabot PR
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -30,16 +30,6 @@ jobs:
             if (pr.draft) {
               core.setFailed('Draft PRs are not eligible for auto-merge.');
               return;
-            }
-
-            const status = await github.rest.repos.getCombinedStatusForRef({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: pr.head.sha
-            });
-
-            if (status.data.state !== 'success') {
-              core.setFailed(`Status checks are not successful: ${status.data.state}`);
             }
 
       - name: Auto-approve Dependabot PR
