@@ -87,7 +87,7 @@ jobs:
 
     - name: 5. Generate Weekly Report Issue (과제 요구사항 4번)
       if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-      uses: actions/github-script@v7
+      uses: actions/github-script@v9
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
