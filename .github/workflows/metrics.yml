@@ -5,16 +5,15 @@ on:
     types: [closed]
   deployment:
   deployment_status:
-  schedule:
-    - cron: '0 0 * * 0' 
-  workflow_dispatch: 
+  issues:
+    types: [closed]
+  workflow_dispatch:
 
 permissions:
   contents: read
-  issues: write
 
 jobs:
-  collect-and-store-metrics:
+  collect-dora-metrics:
     runs-on: ubuntu-latest
 
     steps:
@@ -48,67 +47,34 @@ jobs:
         elif [ "$STATUS" = "failure" ]; then
           echo "❌ Deployment failed"
           echo "CFR_RESULT=1.0" >> $GITHUB_ENV
-        fi
-
-    - name: 4. MTTR Health Check
-      if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-      run: |
-        # 테스트를 위해 github.com 헬스체크 활용
-        if ! curl -f https://github.com; then
-          echo "Service is down!"
         else
-          echo "Service is healthy!"
+          echo "ℹ️ Deployment status is $STATUS"
+          echo "CFR_RESULT=0.0" >> $GITHUB_ENV
         fi
 
-    - name: Save Metrics to Artifact
+    - name: 4. Calculate MTTR from incident issue
+      if: github.event_name == 'issues' && github.event.action == 'closed' && contains(github.event.issue.labels.*.name, 'incident')
       run: |
-        # 환경 변수 값이 없을 경우를 대비한 기본값(0) 할당 로직
+        ISSUE_CREATED="${{ github.event.issue.created_at }}"
+        ISSUE_CLOSED="${{ github.event.issue.closed_at }}"
+        MTTR_SECONDS=$(($(date -d "$ISSUE_CLOSED" +%s) - $(date -d "$ISSUE_CREATED" +%s)))
+        echo "MTTR: $MTTR_SECONDS seconds"
+        echo "MTTR_SECONDS=$MTTR_SECONDS" >> $GITHUB_ENV
+
+    - name: Publish DORA Metrics to Job Summary
+      run: |
         LT=${LEAD_TIME:-0}
         DF=${DF_COUNT:-0}
         CFR=${CFR_RESULT:-0.0}
-        MTTR=0 
-        
-        cat <<EOF > dora_metrics.json
+        MTTR=${MTTR_SECONDS:-0}
+
         {
-          "timestamp": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
-          "lead_time_seconds": $LT,
-          "deployment_frequency": $DF,
-          "mttr_seconds": $MTTR,
-          "change_failure_rate": $CFR
-        }
-        EOF
-        cat dora_metrics.json
-
-    - name: Upload Metrics as Artifact
-      uses: actions/upload-artifact@v7
-      with:
-        name: dora-metrics-data
-        path: dora_metrics.json
-
-    - name: 5. Generate Weekly Report Issue (과제 요구사항 4번)
-      if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
-      uses: actions/github-script@v7
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          const lt = process.env.LEAD_TIME || '0';
-          const df = process.env.DF_COUNT || '0';
-          const cfr = process.env.CFR_RESULT || '0.0';
-          const mttr = '0';
-          
-          const today = new Date().toISOString().split('T')[0];
-          
-          const body = `이번 주 소프트웨어 전달 성능 지표(DORA) 수집 결과입니다.\n\n` +
-            `- **Lead Time for Changes**: ${lt}초\n` +
-            `- **Deployment Frequency**: ${df}회\n` +
-            `- **Change Failure Rate**: ${cfr}\n` +
-            `- **MTTR**: ${mttr}초\n\n` +
-            `상세한 원본 데이터는 이번 Action 실행 결과의 Artifact(\`dora_metrics.json\`)에서 확인할 수 있습니다.`;
-          
-          await github.rest.issues.create({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            title: `[Weekly DORA] ${today}`,
-            body: body
-          });
+          echo "## DORA Metrics Snapshot"
+          echo ""
+          echo "- Event: ${{ github.event_name }}"
+          echo "- Lead Time for Changes (sec): $LT"
+          echo "- Deployment Frequency (event count): $DF"
+          echo "- Change Failure Rate (0=success,1=failure): $CFR"
+          echo "- MTTR (sec): $MTTR"
+        } >> $GITHUB_STEP_SUMMARY
           

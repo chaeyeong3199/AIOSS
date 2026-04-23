@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DORA Metrics Dashboard Prototype</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg: #f4f1e8;
+      --panel: #fffef8;
+      --ink: #1d2a3a;
+      --muted: #586273;
+      --accent-a: #e4572e;
+      --accent-b: #17bebb;
+      --accent-c: #ffc914;
+      --accent-d: #2e282a;
+      --line: #d8d0bb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Pretendard", "Noto Sans KR", sans-serif;
+      color: var(--ink);
+      background: radial-gradient(circle at 10% 0%, #fff8d6 0%, transparent 28%),
+                  radial-gradient(circle at 90% 100%, #d7f9f5 0%, transparent 35%),
+                  var(--bg);
+      min-height: 100vh;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 28px 20px 40px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      letter-spacing: -0.02em;
+    }
+
+    .sub {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .toolbar {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr 1.5fr 0.8fr 0.9fr;
+      gap: 10px;
+      align-items: end;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field label {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .field input {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 10px;
+      padding: 9px 10px;
+      font: inherit;
+      color: var(--ink);
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 12px;
+      background: var(--accent-a);
+      color: #fff;
+      font: inherit;
+      font-weight: 700;
+      padding: 10px 12px;
+      cursor: pointer;
+      min-height: 40px;
+    }
+
+    .btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-size: 0.86rem;
+      color: var(--muted);
+      min-height: 1.2em;
+    }
+
+    .cards {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      box-shadow: 0 6px 22px rgba(25, 28, 33, 0.06);
+      animation: rise 0.5s ease both;
+    }
+
+    .card:nth-child(2) { animation-delay: 0.05s; }
+    .card:nth-child(3) { animation-delay: 0.1s; }
+    .card:nth-child(4) { animation-delay: 0.15s; }
+
+    .label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .value {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px;
+      box-shadow: 0 6px 22px rgba(25, 28, 33, 0.06);
+      animation: rise 0.55s ease both;
+    }
+
+    .panel h2 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .hint {
+      margin-top: 14px;
+      padding: 10px 12px;
+      background: #fff7e0;
+      border: 1px solid #e7d6a2;
+      border-radius: 12px;
+      color: #5f4a1a;
+      font-size: 0.9rem;
+    }
+
+    canvas {
+      width: 100% !important;
+      height: 250px !important;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .toolbar {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>DORA 4 Metrics Dashboard</h1>
+    <p class="sub">GitHub API 실데이터 기반 DORA 대시보드</p>
+
+    <section class="toolbar">
+      <div class="field">
+        <label for="ownerInput">Owner</label>
+        <input id="ownerInput" type="text" value="chaeyeong3199" />
+      </div>
+      <div class="field">
+        <label for="repoInput">Repository</label>
+        <input id="repoInput" type="text" value="AIOSS" />
+      </div>
+      <div class="field">
+        <label for="tokenInput">GitHub Token (선택)</label>
+        <input id="tokenInput" type="password" placeholder="ghp_xxx (rate limit 완화용)" />
+      </div>
+      <div class="field">
+        <label for="weeksInput">기간(주)</label>
+        <input id="weeksInput" type="number" min="2" max="24" value="8" />
+      </div>
+      <button class="btn" id="refreshButton" type="button">새로고침</button>
+    </section>
+    <p class="status" id="statusText">대기 중...</p>
+
+    <section class="cards">
+      <article class="card">
+        <div class="label">Lead Time (평균)</div>
+        <div class="value" id="leadValue">9.1h</div>
+      </article>
+      <article class="card">
+        <div class="label">Deployment Frequency (주간)</div>
+        <div class="value" id="deployValue">6</div>
+      </article>
+      <article class="card">
+        <div class="label">Change Failure Rate</div>
+        <div class="value" id="cfrValue">16.6%</div>
+      </article>
+      <article class="card">
+        <div class="label">MTTR (평균)</div>
+        <div class="value" id="mttrValue">2.4h</div>
+      </article>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Lead Time / MTTR 추이</h2>
+        <canvas id="timeSeriesChart"></canvas>
+      </article>
+      <article class="panel">
+        <h2>Deployment & Failure</h2>
+        <canvas id="barChart"></canvas>
+      </article>
+    </section>
+
+    <p class="hint">
+      참고: 비공개 저장소이거나 API 요청량이 많으면 토큰 입력이 필요합니다. MTTR은 incident 라벨의 closed issue 기준으로 계산합니다.
+    </p>
+  </main>
+
+  <script>
+    const ownerInput = document.getElementById("ownerInput");
+    const repoInput = document.getElementById("repoInput");
+    const tokenInput = document.getElementById("tokenInput");
+    const weeksInput = document.getElementById("weeksInput");
+    const refreshButton = document.getElementById("refreshButton");
+    const statusText = document.getElementById("statusText");
+
+    const leadValueEl = document.getElementById("leadValue");
+    const deployValueEl = document.getElementById("deployValue");
+    const cfrValueEl = document.getElementById("cfrValue");
+    const mttrValueEl = document.getElementById("mttrValue");
+
+    const timeSeriesChart = new Chart(document.getElementById("timeSeriesChart"), {
+      type: "line",
+      data: {
+        labels: [],
+        datasets: [
+          {
+            label: "Lead Time (hours)",
+            data: [],
+            borderColor: "#e4572e",
+            backgroundColor: "rgba(228, 87, 46, 0.15)",
+            tension: 0.25,
+            fill: true
+          },
+          {
+            label: "MTTR (hours)",
+            data: [],
+            borderColor: "#17bebb",
+            backgroundColor: "rgba(23, 190, 187, 0.14)",
+            tension: 0.25,
+            fill: true
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: "top" }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: "Hours"
+            }
+          }
+        }
+      }
+    });
+
+    const barChart = new Chart(document.getElementById("barChart"), {
+      type: "bar",
+      data: {
+        labels: [],
+        datasets: [
+          {
+            label: "Deployments",
+            data: [],
+            backgroundColor: "#ffc914"
+          },
+          {
+            label: "Failed Deployments",
+            data: [],
+            backgroundColor: "#2e282a"
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: "top" }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: { stepSize: 1 }
+          }
+        }
+      }
+    });
+
+    function setStatus(message) {
+      statusText.textContent = message;
+    }
+
+    function toIsoDate(date) {
+      return date.toISOString().slice(0, 10);
+    }
+
+    function formatWeekLabel(date) {
+      const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+      const day = String(date.getUTCDate()).padStart(2, "0");
+      return `${month}/${day}`;
+    }
+
+    function buildWeeklyBuckets(weeks) {
+      const now = new Date();
+      const nowMs = now.getTime();
+      const weekMs = 7 * 24 * 60 * 60 * 1000;
+      const buckets = [];
+
+      for (let i = weeks - 1; i >= 0; i -= 1) {
+        const start = new Date(nowMs - (i + 1) * weekMs);
+        const end = new Date(nowMs - i * weekMs);
+        buckets.push({
+          startMs: start.getTime(),
+          endMs: end.getTime(),
+          label: formatWeekLabel(start),
+          key: toIsoDate(start)
+        });
+      }
+
+      return buckets;
+    }
+
+    function findBucketIndex(timestampMs, buckets) {
+      return buckets.findIndex((bucket) => timestampMs >= bucket.startMs && timestampMs < bucket.endMs);
+    }
+
+    function safeAverage(sum, count) {
+      return count > 0 ? Number((sum / count).toFixed(2)) : 0;
+    }
+
+    function formatHours(value) {
+      if (!Number.isFinite(value)) {
+        return "0h";
+      }
+      return `${value.toFixed(2)}h`;
+    }
+
+    async function fetchGitHub(path, token) {
+      const headers = {
+        "Accept": "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28"
+      };
+
+      if (token) {
+        headers.Authorization = `Bearer ${token}`;
+      }
+
+      const response = await fetch(`https://api.github.com${path}`, { headers });
+      const remaining = response.headers.get("x-ratelimit-remaining");
+      const reset = response.headers.get("x-ratelimit-reset");
+      const payload = await response.json();
+
+      if (!response.ok) {
+        let detail = payload && payload.message ? payload.message : `HTTP ${response.status}`;
+        if (response.status === 403 && remaining === "0" && reset) {
+          const resetTime = new Date(Number(reset) * 1000).toLocaleString();
+          detail = `API rate limit 초과. 재시도 가능 시각: ${resetTime}`;
+        }
+        throw new Error(detail);
+      }
+
+      return payload;
+    }
+
+    async function fetchPaginated(path, token, maxPages = 4) {
+      const all = [];
+      for (let page = 1; page <= maxPages; page += 1) {
+        const sep = path.includes("?") ? "&" : "?";
+        const data = await fetchGitHub(`${path}${sep}per_page=100&page=${page}`, token);
+        if (!Array.isArray(data) || data.length === 0) {
+          break;
+        }
+        all.push(...data);
+        if (data.length < 100) {
+          break;
+        }
+      }
+      return all;
+    }
+
+    async function loadDashboard() {
+      const owner = ownerInput.value.trim();
+      const repo = repoInput.value.trim();
+      const token = tokenInput.value.trim();
+      const weeks = Math.min(24, Math.max(2, Number(weeksInput.value) || 8));
+      weeksInput.value = String(weeks);
+
+      if (!owner || !repo) {
+        setStatus("Owner/Repository 값을 입력해 주세요.");
+        return;
+      }
+
+      refreshButton.disabled = true;
+      setStatus("GitHub API에서 데이터를 가져오는 중...");
+
+      try {
+        const buckets = buildWeeklyBuckets(weeks);
+        const labels = buckets.map((bucket) => bucket.label);
+        const leadSums = new Array(buckets.length).fill(0);
+        const leadCounts = new Array(buckets.length).fill(0);
+        const mttrSums = new Array(buckets.length).fill(0);
+        const mttrCounts = new Array(buckets.length).fill(0);
+        const deploymentCounts = new Array(buckets.length).fill(0);
+        const failureCounts = new Array(buckets.length).fill(0);
+
+        const [pulls, deployments, incidents] = await Promise.all([
+          fetchPaginated(`/repos/${owner}/${repo}/pulls?state=closed&sort=updated&direction=desc`, token),
+          fetchPaginated(`/repos/${owner}/${repo}/deployments`, token),
+          fetchPaginated(`/repos/${owner}/${repo}/issues?state=closed&labels=incident&sort=updated&direction=desc`, token)
+        ]);
+
+        const mergedPulls = pulls.filter((pr) => pr.merged_at);
+
+        for (const pr of mergedPulls) {
+          const createdMs = new Date(pr.created_at).getTime();
+          const mergedMs = new Date(pr.merged_at).getTime();
+          const idx = findBucketIndex(mergedMs, buckets);
+          if (idx >= 0 && mergedMs >= createdMs) {
+            leadSums[idx] += (mergedMs - createdMs) / (1000 * 60 * 60);
+            leadCounts[idx] += 1;
+          }
+        }
+
+        const recentDeployments = deployments
+          .filter((d) => d && d.id && d.created_at)
+          .map((d) => ({ id: d.id, createdMs: new Date(d.created_at).getTime() }))
+          .filter((d) => findBucketIndex(d.createdMs, buckets) >= 0)
+          .slice(0, 40);
+
+        await Promise.all(recentDeployments.map(async (deployment) => {
+          const idx = findBucketIndex(deployment.createdMs, buckets);
+          if (idx < 0) {
+            return;
+          }
+
+          deploymentCounts[idx] += 1;
+          const statuses = await fetchGitHub(`/repos/${owner}/${repo}/deployments/${deployment.id}/statuses?per_page=1`, token);
+          const latest = Array.isArray(statuses) && statuses.length > 0 ? statuses[0] : null;
+          const state = latest && latest.state ? String(latest.state).toLowerCase() : "";
+
+          if (state === "failure" || state === "error") {
+            failureCounts[idx] += 1;
+          }
+        }));
+
+        const incidentIssues = incidents.filter((issue) => !issue.pull_request && issue.closed_at);
+
+        for (const issue of incidentIssues) {
+          const createdMs = new Date(issue.created_at).getTime();
+          const closedMs = new Date(issue.closed_at).getTime();
+          const idx = findBucketIndex(closedMs, buckets);
+          if (idx >= 0 && closedMs >= createdMs) {
+            mttrSums[idx] += (closedMs - createdMs) / (1000 * 60 * 60);
+            mttrCounts[idx] += 1;
+          }
+        }
+
+        const leadHours = leadSums.map((sum, i) => safeAverage(sum, leadCounts[i]));
+        const mttrHours = mttrSums.map((sum, i) => safeAverage(sum, mttrCounts[i]));
+
+        const totalLead = leadSums.reduce((a, b) => a + b, 0);
+        const totalLeadCount = leadCounts.reduce((a, b) => a + b, 0);
+        const totalMttr = mttrSums.reduce((a, b) => a + b, 0);
+        const totalMttrCount = mttrCounts.reduce((a, b) => a + b, 0);
+        const totalDeploy = deploymentCounts.reduce((a, b) => a + b, 0);
+        const totalFailures = failureCounts.reduce((a, b) => a + b, 0);
+
+        const leadAvg = safeAverage(totalLead, totalLeadCount);
+        const mttrAvg = safeAverage(totalMttr, totalMttrCount);
+        const cfr = totalDeploy > 0 ? Number(((totalFailures / totalDeploy) * 100).toFixed(2)) : 0;
+        const deployPerWeek = Number((totalDeploy / weeks).toFixed(2));
+
+        leadValueEl.textContent = formatHours(leadAvg);
+        deployValueEl.textContent = String(deployPerWeek);
+        cfrValueEl.textContent = `${cfr}%`;
+        mttrValueEl.textContent = formatHours(mttrAvg);
+
+        timeSeriesChart.data.labels = labels;
+        timeSeriesChart.data.datasets[0].data = leadHours;
+        timeSeriesChart.data.datasets[1].data = mttrHours;
+        timeSeriesChart.update();
+
+        barChart.data.labels = labels;
+        barChart.data.datasets[0].data = deploymentCounts;
+        barChart.data.datasets[1].data = failureCounts;
+        barChart.update();
+
+        setStatus(`${owner}/${repo} 기준 최근 ${weeks}주 데이터 반영 완료 (UTC ${new Date().toLocaleString()})`);
+      } catch (error) {
+        setStatus(`데이터 로딩 실패: ${error.message}`);
+      } finally {
+        refreshButton.disabled = false;
+      }
+    }
+
+    refreshButton.addEventListener("click", loadDashboard);
+    loadDashboard();
+    setInterval(loadDashboard, 10 * 60 * 1000);
+  </script>
+</body>
+</html>

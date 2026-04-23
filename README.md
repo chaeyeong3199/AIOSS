@@ -61,3 +61,28 @@ Gaussian Pruning과 Importance Sampling을 결합하여
 - 실험 파라미터 관리 및 벤치마크 지원
 
 ---
+
+## 📊 DORA 4대 지표 자동 수집 (GitHub Actions)
+
+과제 요구사항에 맞춰 DORA 4대 지표를 GitHub Actions로 자동 수집하도록 구성했습니다.
+
+- Lead Time for Changes: PR이 merge될 때 `created_at` ~ `merged_at` 차이 계산
+- Deployment Frequency: `deployment` 이벤트 발생 시 카운트
+- Change Failure Rate: `deployment_status`가 `failure/success`일 때 1.0/0.0 기록
+- MTTR: `incident` 라벨이 붙은 이슈가 닫힐 때 `created_at` ~ `closed_at` 계산
+
+워크플로우 파일: `.github/workflows/metrics.yml`
+
+---
+
+## 🖥️ 대시보드 시안 (Chart.js)
+
+대시보드 시안/구현 파일을 추가했습니다.
+
+- 구현 파일: `project_docs/dora_dashboard.html`
+- 시안 이미지: `project_docs/dora_dashboard_wireframe.svg`
+
+아래 이미지는 저장소에 포함된 대시보드 시안입니다.
+
+![DORA Dashboard Wireframe](project_docs/dora_dashboard_wireframe.svg)
+
