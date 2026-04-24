@@ -1,0 +1,43 @@
+name: DORA Metrics Collector
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  collect-dora:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Collect DORA metrics from GitHub API
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          LOOKBACK_DAYS: '30'
+        run: |
+          python scripts/collect_dora_metrics.py
+
+      - name: Upload metric artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dora-metrics
+          path: docs/metrics/
+
+      - name: Commit metric snapshot
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/metrics/latest.json docs/metrics/history.json
+          git diff --staged --quiet || git commit -m "chore(metrics): update DORA metrics snapshot"
+          git push

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-label="DORA dashboard preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5fbf9"/>
+      <stop offset="100%" stop-color="#e4f2ff"/>
+    </linearGradient>
+    <style>
+      .title { font: 700 34px 'Segoe UI', Tahoma, sans-serif; fill: #1d2d44; }
+      .subtitle { font: 500 16px 'Segoe UI', Tahoma, sans-serif; fill: #3e5c76; }
+      .card { fill: #ffffff; stroke: #c6d8ec; stroke-width: 2; }
+      .label { font: 600 16px 'Segoe UI', Tahoma, sans-serif; fill: #1d2d44; }
+      .value { font: 700 40px 'Segoe UI', Tahoma, sans-serif; fill: #0b6e4f; }
+      .axis { stroke: #9fb3c8; stroke-width: 1; }
+      .line1 { fill: none; stroke: #0b6e4f; stroke-width: 4; }
+      .line2 { fill: none; stroke: #3d7ea6; stroke-width: 4; }
+      .line3 { fill: none; stroke: #d1495b; stroke-width: 4; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1200" height="675" fill="url(#bg)"/>
+  <text x="60" y="70" class="title">DORA Metrics Dashboard</text>
+  <text x="60" y="102" class="subtitle">GitHub API + GitHub Actions 자동 수집 시안</text>
+
+  <rect x="60" y="140" width="255" height="150" rx="16" class="card"/>
+  <text x="82" y="182" class="label">Lead Time (h)</text>
+  <text x="82" y="242" class="value">18.4</text>
+
+  <rect x="335" y="140" width="255" height="150" rx="16" class="card"/>
+  <text x="357" y="182" class="label">Deploy Freq (/day)</text>
+  <text x="357" y="242" class="value">0.43</text>
+
+  <rect x="610" y="140" width="255" height="150" rx="16" class="card"/>
+  <text x="632" y="182" class="label">MTTR (h)</text>
+  <text x="632" y="242" class="value">5.2</text>
+
+  <rect x="885" y="140" width="255" height="150" rx="16" class="card"/>
+  <text x="907" y="182" class="label">Change Failure (%)</text>
+  <text x="907" y="242" class="value">12.5</text>
+
+  <rect x="60" y="320" width="1080" height="295" rx="18" class="card"/>
+  <line x1="120" y1="565" x2="1080" y2="565" class="axis"/>
+  <line x1="120" y1="370" x2="120" y2="565" class="axis"/>
+
+  <polyline class="line1" points="120,505 320,482 520,458 720,440 920,425"/>
+  <polyline class="line2" points="120,520 320,508 520,495 720,486 920,475"/>
+  <polyline class="line3" points="120,430 320,448 520,462 720,475 920,490"/>
+
+  <text x="130" y="352" class="subtitle">최근 5일 추세 (예시)</text>
+  <text x="955" y="430" class="subtitle">Lead Time</text>
+  <text x="955" y="476" class="subtitle">MTTR</text>
+  <text x="955" y="492" class="subtitle">Failure Rate</text>
+</svg>
