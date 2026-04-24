@@ -22,3 +22,5 @@
 - `history.json`과 `latest.json` 자동 연동
 
 **구현 파일:** `assignments/L02/dora-dashboard.html`
+
+![DORA Dashboard Preview](dora-dashboard-preview.svg)
