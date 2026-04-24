@@ -1,0 +1,31 @@
+{
+  "window": {
+    "since": "2026-03-25T00:00:00Z",
+    "until": "2026-04-24T00:00:00Z",
+    "days": 30
+  },
+  "summary": {
+    "lead_time_hours": 18.4,
+    "deployment_frequency_per_day": 0.43,
+    "mttr_hours": 5.2,
+    "change_failure_rate_percent": 12.5
+  },
+  "counts": {
+    "merged_prs": 11,
+    "deployments_success": 13,
+    "deployments_failure": 2,
+    "incidents": 3
+  },
+  "events": {
+    "merged_prs": [],
+    "deployments": [],
+    "incidents": []
+  },
+  "meta": {
+    "repo": "chaeyeong3199/AIOSS",
+    "generated_at": "2026-04-24T00:00:00Z",
+    "notes": [
+      "Sample values for local preview. Workflow run will overwrite this file."
+    ]
+  }
+}
