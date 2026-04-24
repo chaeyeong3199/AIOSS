@@ -66,12 +66,25 @@ Gaussian Pruning과 Importance Sampling을 결합하여
 
 과제 요구사항에 맞춰 DORA 4대 지표를 GitHub Actions로 자동 수집하도록 구성했습니다.
 
-- Lead Time for Changes: PR이 merge될 때 `created_at` ~ `merged_at` 차이 계산
-- Deployment Frequency: `deployment` 이벤트 발생 시 카운트
-- Change Failure Rate: `deployment_status`가 `failure/success`일 때 1.0/0.0 기록
-- MTTR: `incident` 라벨이 붙은 이슈가 닫힐 때 `created_at` ~ `closed_at` 계산
+- Lead Time for Changes: 최근 30일 내 머지된 PR의 첫 커밋 시각부터 머지 시각까지 평균 시간
+- Deployment Frequency: 최근 30일 내 `production/prod/live` 환경 성공 배포 수를 일 단위로 환산
+- Change Failure Rate: 최근 30일 내 배포 상태(`failure/error`) 비율
+- MTTR: 최근 30일 내 `incident/outage/sev/bug` 라벨 이슈의 평균 복구 시간(오픈~클로즈)
 
-워크플로우 파일: `.github/workflows/metrics.yml`
+워크플로우 파일: `.github/workflows/dora-metrics.yml`
+
+수집 스크립트: `scripts/collect_dora_metrics.py`
+
+산출 파일
+
+- `docs/metrics/latest.json`: 최신 DORA 지표 스냅샷
+- `docs/metrics/history.json`: 날짜별 추이 데이터
+
+실행 방식
+
+- `workflow_dispatch`로 수동 실행
+- `schedule`(매일 00:00 UTC)로 자동 실행
+- 실행 후 metrics JSON을 저장소에 자동 커밋
 
 ---
 
@@ -79,10 +92,12 @@ Gaussian Pruning과 Importance Sampling을 결합하여
 
 대시보드 시안/구현 파일을 추가했습니다.
 
-- 구현 파일: `project_docs/dora_dashboard.html`
-- 시안 이미지: `project_docs/dora_dashboard_wireframe.svg`
+- 구현 파일: `docs/dora-dashboard.html`
+- 시안 이미지: `docs/assets/dora-dashboard-preview.svg`
 
 아래 이미지는 저장소에 포함된 대시보드 시안입니다.
 
-![DORA Dashboard Wireframe](project_docs/dora_dashboard_wireframe.svg)
+![DORA Dashboard Preview](docs/assets/dora-dashboard-preview.svg)
+
+대시보드는 `docs/metrics/history.json`과 `docs/metrics/latest.json`을 읽어 카드/추세 차트를 표시합니다.
 

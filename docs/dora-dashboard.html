@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DORA Metrics Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      :root {
+        --bg-a: #f4f9f4;
+        --bg-b: #e2eefb;
+        --surface: #ffffff;
+        --text: #1f2a44;
+        --muted: #4f6385;
+        --ok: #0b6e4f;
+        --warn: #d1495b;
+        --line2: #2f6690;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--text);
+        background: radial-gradient(circle at 10% 20%, #ffffff 0%, transparent 35%),
+          linear-gradient(135deg, var(--bg-a), var(--bg-b));
+        min-height: 100vh;
+      }
+
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px 16px 40px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(1.6rem, 2.2vw, 2.3rem);
+      }
+
+      .sub {
+        margin-top: 8px;
+        color: var(--muted);
+      }
+
+      .cards {
+        margin-top: 20px;
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      .card {
+        background: var(--surface);
+        border-radius: 16px;
+        border: 1px solid #d6e3f3;
+        box-shadow: 0 10px 24px rgba(31, 42, 68, 0.06);
+        padding: 14px;
+      }
+
+      .card h2 {
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+
+      .value {
+        margin-top: 8px;
+        font-size: clamp(1.6rem, 4vw, 2rem);
+        font-weight: 700;
+      }
+
+      .chart-panel {
+        margin-top: 18px;
+        background: var(--surface);
+        border-radius: 16px;
+        border: 1px solid #d6e3f3;
+        box-shadow: 0 10px 24px rgba(31, 42, 68, 0.06);
+        padding: 16px;
+      }
+
+      canvas {
+        width: 100% !important;
+        height: 360px !important;
+      }
+
+      .meta {
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .badge {
+        display: inline-block;
+        margin-top: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #e7f4ef;
+        color: var(--ok);
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>DORA Metrics Dashboard</h1>
+      <p class="sub">GitHub Actions에서 생성한 metrics JSON을 기반으로 자동 시각화합니다.</p>
+
+      <section class="cards">
+        <article class="card">
+          <h2>Lead Time (hours)</h2>
+          <div class="value" id="leadTime">-</div>
+        </article>
+        <article class="card">
+          <h2>Deployment Frequency (/day)</h2>
+          <div class="value" id="deployFreq">-</div>
+        </article>
+        <article class="card">
+          <h2>MTTR (hours)</h2>
+          <div class="value" id="mttr">-</div>
+        </article>
+        <article class="card">
+          <h2>Change Failure Rate (%)</h2>
+          <div class="value" id="cfr">-</div>
+        </article>
+      </section>
+
+      <section class="chart-panel">
+        <canvas id="trendChart"></canvas>
+        <div class="meta" id="meta">last updated: -</div>
+        <span class="badge">window: 최근 30일</span>
+      </section>
+    </div>
+
+    <script>
+      async function loadJson(path) {
+        const response = await fetch(path, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Failed to load ${path}`);
+        }
+        return response.json();
+      }
+
+      function setText(id, value, suffix = "") {
+        document.getElementById(id).textContent = value == null ? "N/A" : `${value}${suffix}`;
+      }
+
+      function renderChart(history) {
+        const labels = history.map((d) => d.date);
+        const lead = history.map((d) => d.lead_time_hours);
+        const mttr = history.map((d) => d.mttr_hours);
+        const cfr = history.map((d) => d.change_failure_rate_percent);
+
+        const ctx = document.getElementById("trendChart");
+        new Chart(ctx, {
+          type: "line",
+          data: {
+            labels,
+            datasets: [
+              {
+                label: "Lead Time (h)",
+                data: lead,
+                borderColor: "#0b6e4f",
+                tension: 0.25,
+              },
+              {
+                label: "MTTR (h)",
+                data: mttr,
+                borderColor: "#2f6690",
+                tension: 0.25,
+              },
+              {
+                label: "Change Failure Rate (%)",
+                data: cfr,
+                borderColor: "#d1495b",
+                tension: 0.25,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "bottom",
+              },
+            },
+          },
+        });
+      }
+
+      async function main() {
+        try {
+          const [latest, history] = await Promise.all([
+            loadJson("./metrics/latest.json"),
+            loadJson("./metrics/history.json"),
+          ]);
+
+          setText("leadTime", latest.summary.lead_time_hours);
+          setText("deployFreq", latest.summary.deployment_frequency_per_day);
+          setText("mttr", latest.summary.mttr_hours);
+          setText("cfr", latest.summary.change_failure_rate_percent);
+          document.getElementById("meta").textContent = `last updated: ${latest.meta.generated_at}`;
+
+          renderChart(history);
+        } catch (err) {
+          document.getElementById("meta").textContent = `error: ${err.message}`;
+        }
+      }
+
+      main();
+    </script>
+  </body>
+</html>
