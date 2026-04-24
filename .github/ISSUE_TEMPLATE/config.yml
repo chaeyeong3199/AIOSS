@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 과제 문의
+    url: https://github.com/chaeyeong3199/AIOSS/issues
+    about: 과제 관련 일반 문의는 이슈로 남겨주세요.
