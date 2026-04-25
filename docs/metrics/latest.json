@@ -1,31 +1,58 @@
 {
   "window": {
-    "since": "2026-03-25T00:00:00Z",
-    "until": "2026-04-24T00:00:00Z",
+    "since": "2026-03-26T03:18:49Z",
+    "until": "2026-04-25T03:18:49Z",
     "days": 30
   },
   "summary": {
-    "lead_time_hours": 18.4,
-    "deployment_frequency_per_day": 0.43,
-    "mttr_hours": 5.2,
-    "change_failure_rate_percent": 12.5
+    "lead_time_hours": 0.2,
+    "deployment_frequency_per_day": 0.0,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
   },
   "counts": {
-    "merged_prs": 11,
-    "deployments_success": 13,
-    "deployments_failure": 2,
-    "incidents": 3
+    "merged_prs": 4,
+    "deployments_success": 0,
+    "deployments_failure": 0,
+    "incidents": 0
   },
   "events": {
-    "merged_prs": [],
+    "merged_prs": [
+      {
+        "number": 17,
+        "title": "fix: Dependabot auto-merge fails with GITHUB_TOKEN approval restriction",
+        "merged_at": "2026-04-15T07:32:16Z",
+        "first_commit_at": "2026-04-15T07:22:33Z"
+      },
+      {
+        "number": 9,
+        "title": "Add Dependabot updates with guarded auto-merge for dependency PRs",
+        "merged_at": "2026-04-15T07:09:10Z",
+        "first_commit_at": "2026-04-15T06:52:32Z"
+      },
+      {
+        "number": 8,
+        "title": "Add GitHub Actions workflow for Docker build/push to GHCR",
+        "merged_at": "2026-04-15T07:06:11Z",
+        "first_commit_at": "2026-04-15T06:49:29Z"
+      },
+      {
+        "number": 10,
+        "title": "chore(deps): bump actions/upload-artifact from 4 to 7",
+        "merged_at": "2026-04-15T07:14:11Z",
+        "first_commit_at": "2026-04-15T07:09:51Z"
+      }
+    ],
     "deployments": [],
     "incidents": []
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-04-24T00:00:00Z",
+    "generated_at": "2026-04-25T03:18:49Z",
     "notes": [
-      "Sample values for local preview. Workflow run will overwrite this file."
+      "Lead Time is approximated as first commit in merged PR to merge time.",
+      "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
+      "MTTR is based on incident-labeled issues from creation to closure."
     ]
   }
 }

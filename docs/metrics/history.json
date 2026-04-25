@@ -2,7 +2,7 @@
   {
     "date": "2026-04-20",
     "lead_time_hours": 22.1,
-    "deployment_frequency_per_day": 0.30,
+    "deployment_frequency_per_day": 0.3,
     "mttr_hours": 6.8,
     "change_failure_rate_percent": 16.67
   },
@@ -23,7 +23,7 @@
   {
     "date": "2026-04-23",
     "lead_time_hours": 18.9,
-    "deployment_frequency_per_day": 0.40,
+    "deployment_frequency_per_day": 0.4,
     "mttr_hours": 5.6,
     "change_failure_rate_percent": 13.33
   },
@@ -33,5 +33,12 @@
     "deployment_frequency_per_day": 0.43,
     "mttr_hours": 5.2,
     "change_failure_rate_percent": 12.5
+  },
+  {
+    "date": "2026-04-25",
+    "lead_time_hours": 0.2,
+    "deployment_frequency_per_day": 0.0,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
   }
 ]
