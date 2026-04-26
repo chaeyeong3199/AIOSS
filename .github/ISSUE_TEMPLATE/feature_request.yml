@@ -1,0 +1,62 @@
+name: Feature Request
+description: 기능 제안 및 구현 요청을 작성합니다.
+title: "[Feature] "
+labels:
+  - type:feature
+  - status:backlog
+body:
+  - type: markdown
+    attributes:
+      value: |
+        제안 배경과 기대 효과를 구체적으로 작성해 주세요.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: 문제/배경
+      description: 현재 어떤 불편이나 한계가 있는지
+      placeholder: 예) sampling 전략 비교 실험을 수동으로 수행하고 있음
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 제안 내용
+      description: 원하는 기능/개선안을 설명
+      placeholder: 예) strategy별 자동 실행 및 리포트 생성 기능 추가
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 완료 기준
+      description: 완료 여부를 판단할 체크리스트
+      placeholder: |
+        - [ ] CLI 옵션으로 전략 선택 가능
+        - [ ] 결과 JSON 자동 저장
+        - [ ] README 사용법 업데이트
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: 관련 영역
+      options:
+        - area:data
+        - area:model
+        - area:eval
+        - area:infra
+        - area:docs
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 우선순위
+      options:
+        - priority:high
+        - priority:medium
+        - priority:low
+      default: 1

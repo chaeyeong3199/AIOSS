@@ -9,8 +9,8 @@
 - Change Failure Rate: 배포 실패율
 - MTTR: 이슈 복구 시간
 
-**워크플로우:** `.github/workflows/dora-metrics.yml`  
-**수집 스크립트:** `assignments/L02/collect_dora_metrics.py`
+**워크플로우:** [dora-metrics.yml](../../.github/workflows/dora-metrics.yml)
+**수집 스크립트:** [collect_dora_metrics.py](collect_dora_metrics.py)
 
 ### 산출 파일
 - `latest.json` - 최신 DORA 지표 스냅샷
@@ -21,6 +21,6 @@
 - 메트릭 카드 및 추세 차트 표시
 - `history.json`과 `latest.json` 자동 연동
 
-**구현 파일:** `assignments/L02/dora-dashboard.html`
+**구현 파일:** [docs/dora-dashboard.html](../../docs/dora-dashboard.html)
 
 ![DORA Dashboard Preview](dora-dashboard-preview.svg)

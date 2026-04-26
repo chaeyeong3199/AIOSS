@@ -1,0 +1,62 @@
+name: Bug Report
+description: 버그를 재현 가능하게 제보합니다.
+title: "[Bug] "
+labels:
+  - type:bug
+  - status:backlog
+body:
+  - type: markdown
+    attributes:
+      value: |
+        재현 가능한 버그 정보를 작성해 주세요.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: 버그 요약
+      description: 어떤 문제가 발생했는지 간단히 작성
+      placeholder: 예) pruning ratio 0.7에서 학습이 중단됨
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: 재현 절차
+      description: 순서대로 작성
+      placeholder: |
+        1. 설정 파일에서 ratio=0.7 설정
+        2. 학습 스크립트 실행
+        3. N step에서 에러 발생
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대 결과
+      placeholder: 정상적으로 학습이 완료되어야 함
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 결과
+      placeholder: 발생한 에러/이상 동작
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: 실행 환경
+      description: OS, Python/CUDA, GPU 등
+      placeholder: Windows 11, Python 3.10, CUDA 12.1, RTX 4060
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: 로그/스크린샷
+      description: 에러 로그 또는 스크린샷 첨부
+      render: shell
