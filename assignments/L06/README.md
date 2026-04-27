@@ -21,11 +21,11 @@ Public 저장소를 생성하고 LICENSE, README, CONTRIBUTING, CODE_OF_CONDUCT�
 
 ## 🔗 결과 URL
 
-- 저장소: https://github.com/chaeyeong3199/AIOSS
-- LICENSE: https://github.com/chaeyeong3199/AIOSS/blob/main/LICENSE
-- README: https://github.com/chaeyeong3199/AIOSS/blob/main/README.md
-- CONTRIBUTING: https://github.com/chaeyeong3199/AIOSS/blob/main/CONTRIBUTING.md
-- CODE_OF_CONDUCT: https://github.com/chaeyeong3199/AIOSS/blob/main/CODE_OF_CONDUCT.md
+- 저장소 루트: [AIOSS](../../)
+- LICENSE: [LICENSE](../../LICENSE)
+- README: [README.md](../../README.md)
+- CONTRIBUTING: [CONTRIBUTING.md](../../CONTRIBUTING.md)
+- CODE_OF_CONDUCT: [CODE_OF_CONDUCT.md](../../CODE_OF_CONDUCT.md)
 
 ## 🧭 Inner Source 운영 계획(초안)
 

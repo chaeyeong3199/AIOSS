@@ -16,7 +16,7 @@ Feature 브랜치 전략으로 작업하고 Conventional Commits를 적용해 PR
 
 ## 🔗 결과 URL
 
-- Pull Request: [#29 docs: add week 4 GitHub Flow guide](https://github.com/chaeyeong3199/AIOSS/pull/29)
+- Pull Request: [#29 docs: add week 4 GitHub Flow guide](/chaeyeong3199/AIOSS/pull/29)
 
 ## 💡 리뷰 예시
 
