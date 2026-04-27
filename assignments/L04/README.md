@@ -7,12 +7,16 @@ Feature 브랜치 전략으로 작업하고 Conventional Commits를 적용해 PR
 
 ## ✅ 진행 체크리스트
 
-- [ ] `feature/` 브랜치 생성
-- [ ] Conventional Commits 형식으로 변경 사항 커밋
-- [ ] 원격 브랜치로 push
-- [ ] Pull Request 생성
-- [ ] 최소 3건 이상의 PR 리뷰 수행
-- [ ] 리뷰 코멘트에 `[MUST]` / `[SHOULD]` 태그 사용
+- [x] `feature/` 브랜치 생성
+- [x] Conventional Commits 형식으로 변경 사항 커밋
+- [x] 원격 브랜치로 push
+- [x] Pull Request 생성
+- [x] 최소 3건 이상의 PR 리뷰 수행
+- [x] 리뷰 코멘트에 `[MUST]` / `[SHOULD]` 태그 사용
+
+## 🔗 결과 URL
+
+- Pull Request: [#29 docs: add week 4 GitHub Flow guide](https://github.com/chaeyeong3199/AIOSS/pull/29)
 
 ## 💡 리뷰 예시
 
