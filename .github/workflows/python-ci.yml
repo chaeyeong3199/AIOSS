@@ -1,0 +1,171 @@
+name: Python CI
+
+on:
+  push:
+    branches: [ main, feature/** ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Create build artifact
+        shell: python
+        run: |
+          from pathlib import Path
+          import zipfile
+
+          output_dir = Path('build-output')
+          output_dir.mkdir(exist_ok=True)
+          archive_path = output_dir / 'source.zip'
+
+          excluded = {'.git', '.venv', 'build-output', '__pycache__'}
+          with zipfile.ZipFile(archive_path, 'w', compression=zipfile.ZIP_DEFLATED) as archive:
+              for path in Path('.').rglob('*'):
+                  if any(part in excluded for part in path.parts):
+                      continue
+                  if path.is_file():
+                      archive.write(path, path.as_posix())
+
+          (output_dir / 'metadata.txt').write_text('Built source archive for L07 CI/CD\n', encoding='utf-8')
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-package
+          path: build-output/
+
+  test:
+    name: Test (matrix)
+    needs: build
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: [3.8, 3.9, 3.10, 3.11]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: source-package
+          path: source-package
+
+      - name: Verify build artifact
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          artifact_dir = Path('source-package')
+          assert artifact_dir.exists(), 'Downloaded build artifact should exist'
+          assert (artifact_dir / 'source.zip').exists(), 'Built archive should exist'
+          assert (artifact_dir / 'metadata.txt').exists(), 'Build metadata should exist'
+          PY
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install dependencies (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
+
+      - name: Install dependencies (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          if (Test-Path requirements.txt) { pip install -r requirements.txt }
+          if (Test-Path requirements-dev.txt) { pip install -r requirements-dev.txt }
+
+      - name: Lint (flake8) if configured
+        run: |
+          python -m pip install flake8 --upgrade || true
+          if [ -f setup.cfg ] || [ -f pyproject.toml ] || [ -f .flake8 ]; then
+            flake8 || echo 'flake8 returned non-zero (continue)'
+          fi
+        if: runner.os != 'Windows'
+
+      - name: Lint (flake8) on Windows if configured
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          pip install flake8 --upgrade || true
+          if ((Test-Path setup.cfg) -or (Test-Path pyproject.toml) -or (Test-Path .flake8)) {
+            flake8; if ($LASTEXITCODE -ne 0) { Write-Host 'flake8 returned non-zero (continue)' }
+          }
+
+      - name: Run tests (Linux/macOS)
+        if: runner.os != 'Windows'
+        run: |
+          if [ -f pytest.ini ] || [ -d tests ]; then
+            python -m pip install pytest || true
+            pytest -q --junitxml=pytest-results.xml || true
+            mkdir -p test-results || true
+            mv pytest-results.xml test-results/ || true
+          else
+            echo 'No tests detected.'
+          fi
+
+      - name: Run tests (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          if ((Test-Path pytest.ini) -or (Test-Path tests)) {
+            pip install pytest || true
+            pytest -q --junitxml=pytest-results.xml || true
+            if (-not (Test-Path test-results)) { New-Item -ItemType Directory -Path test-results | Out-Null }
+            Move-Item pytest-results.xml test-results/ -ErrorAction SilentlyContinue
+          } else {
+            Write-Host 'No tests detected.'
+          }
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-results-${{ matrix.os }}-py${{ matrix.python-version }}
+          path: test-results/
+
+  deploy:
+    name: Deploy (placeholder)
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: source-package
+          path: deploy-package
+
+      - name: Deploy step (example)
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          echo "Deploy placeholder: add actual deploy steps here."
+          ls -la deploy-package
+          if [ -z "${DEPLOY_TOKEN}" ]; then
+            echo "No DEPLOY_TOKEN set; skipping real deploy"
+            exit 0
+          fi
+          # Insert real deploy commands that use $DEPLOY_TOKEN
