@@ -9,26 +9,26 @@
 
 - [x] GitHub Project 생성 완료
 	- Project: `@chaeyeong3199's AI OSS 칸반 보드` (Project #1)
-	- URL: [https://github.com/users/chaeyeong3199/projects/1](https://github.com/users/chaeyeong3199/projects/1)
+	- URL: [projects/1](https://github.com/users/chaeyeong3199/projects/1)
 - [x] 상태 컬럼 구성 완료
 	- 기본 Status: Backlog / Ready / In progress / In review / Done
 	- 과제 요구 이름과 동일한 커스텀 필드 `Kanban Status` 추가: Backlog / To Do / In Progress / Review / Done
 - [x] 2개 Milestone 구성 완료
 	- AI OSS 중간 점검 (W1-8)
-	- URL: [https://github.com/chaeyeong3199/AIOSS/milestone/2](https://github.com/chaeyeong3199/AIOSS/milestone/2)
+	- URL: [milestone/2](https://github.com/chaeyeong3199/AIOSS/milestone/2)
 	- AI OSS 프로젝트 완성
-	- URL: [https://github.com/chaeyeong3199/AIOSS/milestone/1](https://github.com/chaeyeong3199/AIOSS/milestone/1)
+	- URL: [milestone/1](https://github.com/chaeyeong3199/AIOSS/milestone/1)
 - [x] 10개 이슈 생성 및 milestone 연결 완료 (#19~#28)
-	- 이슈 목록 URL: [https://github.com/chaeyeong3199/AIOSS/issues](https://github.com/chaeyeong3199/AIOSS/issues)
+	- 이슈 목록 URL: [issues](https://github.com/chaeyeong3199/AIOSS/issues)
 	- 대표 이슈 URL: [#19](https://github.com/chaeyeong3199/AIOSS/issues/19), [#28](https://github.com/chaeyeong3199/AIOSS/issues/28)
 - [x] 이슈 템플릿 2종 추가 완료
 	- `.github/ISSUE_TEMPLATE/bug_report.yml`
-	- URL: [https://github.com/chaeyeong3199/AIOSS/blob/main/.github/ISSUE_TEMPLATE/bug_report.yml](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/ISSUE_TEMPLATE/bug_report.yml)
+	- URL: [bug_report.yml](../../.github/ISSUE_TEMPLATE/bug_report.yml)
 	- `.github/ISSUE_TEMPLATE/feature_request.yml`
-	- URL: [https://github.com/chaeyeong3199/AIOSS/blob/main/.github/ISSUE_TEMPLATE/feature_request.yml](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/ISSUE_TEMPLATE/feature_request.yml)
+	- URL: [feature_request.yml](../../.github/ISSUE_TEMPLATE/feature_request.yml)
 - [x] 라벨 체계 구축 및 일괄 적용 완료
 	- type / status / priority / area 라벨 추가
-	- URL: [https://github.com/chaeyeong3199/AIOSS/labels](https://github.com/chaeyeong3199/AIOSS/labels)
+	- URL: [labels](https://github.com/chaeyeong3199/AIOSS/labels)
 	- M1(#19~#23): `status:todo`
 	- M2(#24~#28): `status:backlog`
 - [x] Project 아이템 등록 완료
