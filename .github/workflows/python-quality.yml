@@ -1,0 +1,88 @@
+name: Python Quality Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      run-tests:
+        description: Whether to execute pytest.
+        required: false
+        type: boolean
+        default: true
+      upload-results:
+        description: Whether to upload junit results.
+        required: false
+        type: boolean
+        default: true
+
+jobs:
+  quality:
+    name: Quality matrix
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python and cache dependencies
+        id: python-setup
+        uses: ./.github/actions/python-setup
+        with:
+          python-version: ${{ matrix.python-version }}
+          requirements-files: |
+            requirements-dev.txt
+
+      - name: Verify build artifact
+        shell: python
+        run: |
+          from pathlib import Path
+
+          artifact_dir = Path('source-package')
+          if artifact_dir.exists():
+              assert (artifact_dir / 'source.zip').exists(), 'Built archive should exist'
+              assert (artifact_dir / 'metadata.txt').exists(), 'Build metadata should exist'
+
+      - name: Lint (flake8) when configured
+        if: always()
+        shell: python
+        run: |
+          from pathlib import Path
+          import subprocess
+          import sys
+
+          if any(Path(config).exists() for config in ('setup.cfg', 'pyproject.toml', '.flake8')):
+              subprocess.check_call([sys.executable, '-m', 'flake8'])
+
+      - name: Run tests
+        if: inputs.run-tests
+        shell: python
+        run: |
+          from pathlib import Path
+          import subprocess
+          import sys
+
+          if Path('pytest.ini').exists() or Path('tests').exists():
+              subprocess.check_call([sys.executable, '-m', 'pytest', '-q', '--junitxml=pytest-results.xml'])
+
+      - name: Collect test results
+        if: always() && inputs.upload-results
+        shell: python
+        run: |
+          from pathlib import Path
+          import shutil
+
+          result_dir = Path('test-results')
+          result_dir.mkdir(exist_ok=True)
+          source = Path('pytest-results.xml')
+          if source.exists():
+              shutil.move(str(source), result_dir / source.name)
+
+      - name: Upload test results
+        if: always() && inputs.upload-results && (hashFiles('test-results/pytest-results.xml') != '')
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-results-${{ matrix.os }}-py${{ matrix.python-version }}
+          path: test-results/

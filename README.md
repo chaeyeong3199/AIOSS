@@ -10,3 +10,4 @@ AI OSS 실습 과제 저장 및 관리 공간
 - **[5주차]** 비동기 협업 체계 구축 (Discussions/Wiki/ADR) → [`assignments/L05/README.md`](assignments/L05/README.md)
 - **[6주차]** 오픈소스 실습 및 Inner Source 계획 → [`assignments/L06/README.md`](assignments/L06/README.md)
 - **[7주차]** GitHub Actions 기반 기본 CI/CD 구축 → [`assignments/L07/README.md`](assignments/L07/README.md)
+- **[8주차]** 워크플로우 실행 최적화 (재사용/캐싱/조건부) → [`assignments/L08/README.md`](assignments/L08/README.md)

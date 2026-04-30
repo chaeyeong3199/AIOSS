@@ -1,0 +1,84 @@
+name: Python Setup With Cache
+description: Prepare Python, reuse pip cache, and install repository requirements.
+
+inputs:
+  python-version:
+    description: Python version to install.
+    required: true
+  requirements-files:
+    description: Newline-separated requirement files to install when present.
+    required: false
+    default: |
+      requirements-dev.txt
+  extra-packages:
+    description: Additional pip packages to install.
+    required: false
+    default: ''
+
+outputs:
+  cache-hit:
+    description: Whether the pip cache was reused.
+    value: ${{ steps.setup-python.outputs.cache-hit }}
+  install-seconds:
+    description: Time spent installing requirements.
+    value: ${{ steps.install-dependencies.outputs.install-seconds }}
+
+runs:
+  using: composite
+  steps:
+    - id: setup-python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+        cache: pip
+        cache-dependency-path: |
+          requirements-dev.txt
+
+    - name: Upgrade pip
+      shell: python
+      run: |
+        import subprocess
+        import sys
+
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', 'pip'])
+
+    - id: install-dependencies
+      name: Install requirements
+      shell: python
+      env:
+        REQUIREMENTS_FILES: ${{ inputs.requirements-files }}
+        EXTRA_PACKAGES: ${{ inputs.extra-packages }}
+        CACHE_HIT: ${{ steps.setup-python.outputs.cache-hit }}
+      run: |
+        from pathlib import Path
+        import os
+        import shlex
+        import subprocess
+        import sys
+        import time
+
+        requirement_files = [line.strip() for line in os.environ['REQUIREMENTS_FILES'].splitlines() if line.strip()]
+        start = time.perf_counter()
+
+        for requirement in requirement_files:
+            path = Path(requirement)
+            if path.exists():
+                subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', str(path)])
+
+        extra_packages = os.environ.get('EXTRA_PACKAGES', '').strip()
+        if extra_packages:
+            subprocess.check_call([sys.executable, '-m', 'pip', 'install', *shlex.split(extra_packages)])
+
+        elapsed = time.perf_counter() - start
+        output_path = Path(os.environ['GITHUB_OUTPUT'])
+        output_path.write_text(f"install-seconds={elapsed:.2f}\n", encoding='utf-8')
+
+        summary_path = Path(os.environ['GITHUB_STEP_SUMMARY'])
+        summary_path.write_text(
+            '\n'.join([
+                '### Python setup summary',
+                f"- pip cache hit: {os.environ.get('CACHE_HIT', 'false')}",
+                f"- dependency install time: {elapsed:.2f}s",
+            ]) + '\n',
+            encoding='utf-8',
+        )

@@ -15,4 +15,5 @@ def test_python_ci_workflow_contains_expected_sections():
     assert 'python-version:' in workflow_text
     assert 'actions/download-artifact@v4' in workflow_text
     assert 'actions/upload-artifact@v4' in workflow_text
-    assert 'DEPLOY_TOKEN' in workflow_text
+    assert 'dorny/paths-filter@v3' in workflow_text
+    assert 'Deploy (conditional)' in workflow_text

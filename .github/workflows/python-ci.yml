@@ -14,10 +14,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Prepare Python
+        uses: ./.github/actions/python-setup
         with:
           python-version: '3.11'
+          requirements-files: ''
 
       - name: Create build artifact
         shell: python
@@ -45,128 +46,49 @@ jobs:
           name: source-package
           path: build-output/
 
-  test:
-    name: Test (matrix)
+  quality:
     needs: build
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
-        python-version: ['3.8', '3.9', '3.10', '3.11']
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Download build artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: source-package
-          path: source-package
-
-      - name: Verify build artifact
-        shell: bash
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-
-          artifact_dir = Path('source-package')
-          assert artifact_dir.exists(), 'Downloaded build artifact should exist'
-          assert (artifact_dir / 'source.zip').exists(), 'Built archive should exist'
-          assert (artifact_dir / 'metadata.txt').exists(), 'Build metadata should exist'
-          PY
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
-
-      - name: Upgrade pip
-        run: python -m pip install --upgrade pip
-
-      - name: Install dependencies (Linux/macOS)
-        if: runner.os != 'Windows'
-        run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
-
-      - name: Install dependencies (Windows)
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          if (Test-Path requirements.txt) { pip install -r requirements.txt }
-          if (Test-Path requirements-dev.txt) { pip install -r requirements-dev.txt }
-
-      - name: Lint (flake8) if configured
-        run: |
-          python -m pip install flake8 --upgrade || true
-          if [ -f setup.cfg ] || [ -f pyproject.toml ] || [ -f .flake8 ]; then
-            flake8 || echo 'flake8 returned non-zero (continue)'
-          fi
-        if: runner.os != 'Windows'
-
-      - name: Lint (flake8) on Windows if configured
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          pip install flake8 --upgrade || true
-          if ((Test-Path setup.cfg) -or (Test-Path pyproject.toml) -or (Test-Path .flake8)) {
-            flake8; if ($LASTEXITCODE -ne 0) { Write-Host 'flake8 returned non-zero (continue)' }
-          }
-
-      - name: Run tests (Linux/macOS)
-        if: runner.os != 'Windows'
-        run: |
-          if [ -f pytest.ini ] || [ -d tests ]; then
-            python -m pip install pytest || true
-            pytest -q --junitxml=pytest-results.xml || true
-            mkdir -p test-results || true
-            mv pytest-results.xml test-results/ || true
-          else
-            echo 'No tests detected.'
-          fi
-
-      - name: Run tests (Windows)
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          if ((Test-Path pytest.ini) -or (Test-Path tests)) {
-            pip install pytest || true
-            pytest -q --junitxml=pytest-results.xml || true
-            if (-not (Test-Path test-results)) { New-Item -ItemType Directory -Path test-results | Out-Null }
-            Move-Item pytest-results.xml test-results/ -ErrorAction SilentlyContinue
-          } else {
-            Write-Host 'No tests detected.'
-          }
-
-      - name: Upload test results
-        uses: actions/upload-artifact@v4
-        with:
-          name: pytest-results-${{ matrix.os }}-py${{ matrix.python-version }}
-          path: test-results/
+    uses: ./.github/workflows/python-quality.yml
+    with:
+      run-tests: true
+      upload-results: true
 
   deploy:
-    name: Deploy (placeholder)
-    needs: test
+    name: Deploy (conditional)
+    needs: [build, quality]
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Detect deployment-worthy changes
+        id: filter
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            deploy:
+              - '.github/workflows/**'
+              - '.github/actions/**'
+              - 'scripts/**'
+              - 'docs/**'
+              - 'requirements*.txt'
+              - 'assignments/L08/**'
+
       - name: Download build artifact
+        if: steps.filter.outputs.deploy == 'true'
         uses: actions/download-artifact@v4
         with:
           name: source-package
           path: deploy-package
 
       - name: Deploy step (example)
-        env:
-          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        if: steps.filter.outputs.deploy == 'true'
         run: |
           echo "Deploy placeholder: add actual deploy steps here."
           ls -la deploy-package
-          if [ -z "${DEPLOY_TOKEN}" ]; then
-            echo "No DEPLOY_TOKEN set; skipping real deploy"
-            exit 0
-          fi
-          # Insert real deploy commands that use $DEPLOY_TOKEN
+          echo "Real deployment commands would run here when the deployment gate passes."
+
+      - name: Skip deploy when nothing relevant changed
+        if: steps.filter.outputs.deploy != 'true'
+        run: echo "No deployment-worthy file changes detected."
