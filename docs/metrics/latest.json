@@ -1,23 +1,29 @@
 {
   "window": {
-    "since": "2026-03-30T03:49:01Z",
-    "until": "2026-04-29T03:49:01Z",
+    "since": "2026-03-31T03:49:56Z",
+    "until": "2026-04-30T03:49:56Z",
     "days": 30
   },
   "summary": {
-    "lead_time_hours": 0.15,
+    "lead_time_hours": 0.17,
     "deployment_frequency_per_day": 0.0,
     "mttr_hours": null,
     "change_failure_rate_percent": 0.0
   },
   "counts": {
-    "merged_prs": 6,
+    "merged_prs": 7,
     "deployments_success": 0,
     "deployments_failure": 0,
     "incidents": 0
   },
   "events": {
     "merged_prs": [
+      {
+        "number": 31,
+        "title": "fix: restore python ci workflow",
+        "merged_at": "2026-04-29T05:55:57Z",
+        "first_commit_at": "2026-04-29T05:40:00Z"
+      },
       {
         "number": 30,
         "title": "docs(l04): update progress checklist to reflect completed tasks",
@@ -60,7 +66,7 @@
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-04-29T03:49:01Z",
+    "generated_at": "2026-04-30T03:49:56Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
