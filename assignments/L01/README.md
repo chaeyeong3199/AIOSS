@@ -35,3 +35,7 @@
 - **프로젝트 제안서:** [Project_Proposal.md](Project_Proposal.md)
 - **연구 논문 초안:** [paper_draft.md](paper_draft.md)
 
+---
+
+※ 본 README 및 과제 산출물의 일부 코드/문서는 생성형 AI 도구의 도움을 받아 작성되었습니다.
+

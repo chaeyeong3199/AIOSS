@@ -24,3 +24,7 @@
 **구현 파일:** [docs/dora-dashboard.html](../../docs/dora-dashboard.html)
 
 ![DORA Dashboard Preview](dora-dashboard-preview.svg)
+
+---
+
+※ 본 README 및 과제 산출물의 일부 코드/문서는 생성형 AI 도구의 도움을 받아 작성되었습니다.

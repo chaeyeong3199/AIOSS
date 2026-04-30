@@ -45,3 +45,7 @@
 - GitHub Project 보드 구성 및 이슈 배치 화면
 
 ![L03 GitHub Project Board](image.png)
+
+---
+
+※ 본 README 및 과제 산출물의 일부 코드/문서는 생성형 AI 도구의 도움을 받아 작성되었습니다.
