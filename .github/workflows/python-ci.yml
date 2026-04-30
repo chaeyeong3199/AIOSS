@@ -82,12 +82,19 @@ jobs:
           name: source-package
           path: deploy-package
 
-      - name: Deploy step (example)
+      - name: Deploy step (with secret injection)
         if: steps.filter.outputs.deploy == 'true'
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
-          echo "Deploy placeholder: add actual deploy steps here."
+          echo "Deploy step: using DEPLOY_TOKEN secret for secure deployment."
+          if [ -z "$DEPLOY_TOKEN" ]; then
+            echo "Warning: DEPLOY_TOKEN not set. Set it in repository Secrets."
+          else
+            echo "DEPLOY_TOKEN is securely available (length: ${#DEPLOY_TOKEN})"
+          fi
           ls -la deploy-package
-          echo "Real deployment commands would run here when the deployment gate passes."
+          echo "Deployment would proceed with secured credentials when gate conditions pass."
 
       - name: Skip deploy when nothing relevant changed
         if: steps.filter.outputs.deploy != 'true'
