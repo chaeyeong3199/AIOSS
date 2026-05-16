@@ -1,17 +1,17 @@
 {
   "window": {
-    "since": "2026-04-15T04:05:11Z",
-    "until": "2026-05-15T04:05:11Z",
+    "since": "2026-04-16T03:47:39Z",
+    "until": "2026-05-16T03:47:39Z",
     "days": 30
   },
   "summary": {
-    "lead_time_hours": 0.17,
+    "lead_time_hours": 0.13,
     "deployment_frequency_per_day": 0.0,
     "mttr_hours": null,
     "change_failure_rate_percent": 0.0
   },
   "counts": {
-    "merged_prs": 7,
+    "merged_prs": 3,
     "deployments_success": 0,
     "deployments_failure": 0,
     "incidents": 0
@@ -35,30 +35,6 @@
         "title": "docs: add week 4 GitHub Flow guide",
         "merged_at": "2026-04-27T06:28:34Z",
         "first_commit_at": "2026-04-27T06:24:32Z"
-      },
-      {
-        "number": 17,
-        "title": "fix: Dependabot auto-merge fails with GITHUB_TOKEN approval restriction",
-        "merged_at": "2026-04-15T07:32:16Z",
-        "first_commit_at": "2026-04-15T07:22:33Z"
-      },
-      {
-        "number": 9,
-        "title": "Add Dependabot updates with guarded auto-merge for dependency PRs",
-        "merged_at": "2026-04-15T07:09:10Z",
-        "first_commit_at": "2026-04-15T06:52:32Z"
-      },
-      {
-        "number": 8,
-        "title": "Add GitHub Actions workflow for Docker build/push to GHCR",
-        "merged_at": "2026-04-15T07:06:11Z",
-        "first_commit_at": "2026-04-15T06:49:29Z"
-      },
-      {
-        "number": 10,
-        "title": "chore(deps): bump actions/upload-artifact from 4 to 7",
-        "merged_at": "2026-04-15T07:14:11Z",
-        "first_commit_at": "2026-04-15T07:09:51Z"
       }
     ],
     "deployments": [],
@@ -66,7 +42,7 @@
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-05-15T04:05:11Z",
+    "generated_at": "2026-05-16T03:47:39Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
