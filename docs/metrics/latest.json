@@ -1,7 +1,7 @@
 {
   "window": {
-    "since": "2026-04-19T04:13:06Z",
-    "until": "2026-05-19T04:13:06Z",
+    "since": "2026-04-20T04:13:41Z",
+    "until": "2026-05-20T04:13:41Z",
     "days": 30
   },
   "summary": {
@@ -42,7 +42,7 @@
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-05-19T04:13:06Z",
+    "generated_at": "2026-05-20T04:13:41Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
