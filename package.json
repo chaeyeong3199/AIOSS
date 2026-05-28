@@ -1,6 +1,6 @@
 {
   "name": "@chaeyeong3199/aioss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AIOSS week 9 package for GitHub Packages and Docker automation",
   "main": "src/index.js",
   "bin": {
