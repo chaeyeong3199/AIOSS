@@ -1,0 +1,157 @@
+name: Security Scan
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  security-events: write
+
+jobs:
+  npm-audit:
+    name: npm audit report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run npm audit as JSON
+        run: |
+          mkdir -p reports
+          npm audit --json > reports/npm-audit.json || true
+
+      - name: Summarize npm audit result
+        run: |
+          node - <<'NODE'
+          const fs = require("fs");
+          const reportPath = "reports/npm-audit.json";
+          const report = JSON.parse(fs.readFileSync(reportPath, "utf8"));
+          const vulns = report.metadata?.vulnerabilities || {};
+          const total = Object.values(vulns).reduce((sum, value) => sum + Number(value || 0), 0);
+
+          const summary = [
+            "## npm audit summary",
+            "",
+            `- total vulnerabilities: ${total}`,
+            `- info: ${vulns.info || 0}`,
+            `- low: ${vulns.low || 0}`,
+            `- moderate: ${vulns.moderate || 0}`,
+            `- high: ${vulns.high || 0}`,
+            `- critical: ${vulns.critical || 0}`
+          ].join("\n");
+
+          fs.writeFileSync("reports/npm-audit-summary.md", summary + "\n");
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary + "\n");
+          NODE
+
+      - name: Upload npm audit report
+        uses: actions/upload-artifact@v4
+        with:
+          name: npm-audit-report
+          path: reports/
+
+      - name: Create GitHub issue when vulnerabilities exist
+        if: github.event_name != 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            const report = JSON.parse(fs.readFileSync("reports/npm-audit.json", "utf8"));
+            const vulns = report.metadata?.vulnerabilities || {};
+            const total = Object.values(vulns).reduce((sum, value) => sum + Number(value || 0), 0);
+
+            if (total === 0) {
+              core.info("No vulnerabilities found. Issue will not be created.");
+              return;
+            }
+
+            const title = "[Security] npm audit vulnerabilities detected";
+            const body = [
+              "npm audit detected vulnerabilities.",
+              "",
+              `- total: ${total}`,
+              `- moderate: ${vulns.moderate || 0}`,
+              `- high: ${vulns.high || 0}`,
+              `- critical: ${vulns.critical || 0}`,
+              "",
+              `Workflow run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              "",
+              "Please check the uploaded npm-audit-report artifact."
+            ].join("\n");
+
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: "open",
+              per_page: 100
+            });
+
+            const found = existing.data.find(issue => issue.title === title);
+            if (found) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: found.number,
+                body
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body
+              });
+            }
+
+  snyk:
+    name: Snyk scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Snyk if token exists
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: |
+          mkdir -p reports
+
+          if [ -z "$SNYK_TOKEN" ]; then
+            echo "SNYK_TOKEN is not set. Skipping Snyk scan." | tee reports/snyk-skip.txt
+            exit 0
+          fi
+
+          npx snyk test --severity-threshold=high --json-file-output=reports/snyk.json || true
+
+      - name: Upload Snyk report
+        uses: actions/upload-artifact@v4
+        with:
+          name: snyk-report
+          path: reports/

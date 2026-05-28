@@ -1,0 +1,36 @@
+{
+  "name": "@chaeyeong3199/aioss",
+  "version": "1.0.0",
+  "description": "AIOSS week 9 package for GitHub Packages and Docker automation",
+  "main": "src/index.js",
+  "bin": {
+    "aioss": "bin/aioss.js"
+  },
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "audit:ci": "npm audit --audit-level=moderate"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chaeyeong3199/AIOSS.git"
+  },
+  "keywords": [
+    "aioss",
+    "github-packages",
+    "docker",
+    "dependabot"
+  ],
+  "author": "chaeyeong3199",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
