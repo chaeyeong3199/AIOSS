@@ -67,6 +67,38 @@
   </div>
 
   <div class="card">
+    <h2>Week 11 Feature Flags</h2>
+    <p>Current User: <code id="currentUser">-</code></p>
+    <ul id="flagList">
+      <li>Loading flags...</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>A/B Test Assignment</h2>
+    <p>
+      Experiment:
+      <code>homeHeroCopy</code>
+    </p>
+    <p>
+      Assigned Variant:
+      <code id="abVariant">-</code>
+    </p>
+    <button id="trackClickButton">Track CTA Click Event</button>
+    <p id="trackResult"></p>
+  </div>
+
+  <div class="card" id="betaStatusCard" style="display: none;">
+    <h2>Beta Status API</h2>
+    <p id="betaStatusResult">Loading beta status...</p>
+  </div>
+
+  <div class="card" id="canaryBanner" style="display: none;">
+    <h2>Canary Rollout</h2>
+    <p>이 배너는 Canary 대상 사용자 또는 환경 변수 활성화 시에만 표시됩니다.</p>
+  </div>  
+
+  <div class="card">
     <h2>Docker Deployment Strategy</h2>
     <p>
       Docker 이미지는 GitHub Actions에서 빌드 및 검증하고,
@@ -98,8 +130,93 @@
         healthEl.innerHTML = '<span class="fail">Error</span> - Health Check 요청 실패';
       }
     }
+    async function loadWeek11Features() {
+      const params = new URLSearchParams(window.location.search);
+      const userId =
+        params.get("userId") ||
+        localStorage.getItem("aiossUserId") ||
+        "guest";
 
+      localStorage.setItem("aiossUserId", userId);
+      document.getElementById("currentUser").textContent = userId;
+
+      const response = await fetch(`/api/flags?userId=${encodeURIComponent(userId)}`);
+      const data = await response.json();
+
+      const flagList = document.getElementById("flagList");
+      flagList.innerHTML = "";
+
+      Object.entries(data.flags).forEach(([flagName, flag]) => {
+        const li = document.createElement("li");
+        li.innerHTML = `<code>${flagName}</code>: ${flag.enabled ? "ON" : "OFF"} - ${flag.description}`;
+        flagList.appendChild(li);
+      });
+
+      const heroExperiment = data.experiments.homeHeroCopy;
+      const variant = heroExperiment.variant;
+
+      document.getElementById("abVariant").textContent = variant;
+
+      if (variant === "B") {
+        document.querySelector("h1").textContent =
+          "AIOSS Week 11 Feature Flag Experiment Dashboard";
+      }
+
+      await fetch("/api/track", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userId,
+          eventName: "experiment_exposure",
+          experimentName: "homeHeroCopy",
+          variant,
+          metadata: {
+            page: "public/index.html",
+          },
+        }),
+      });
+
+      if (data.flags.betaStatusApi.enabled) {
+        document.getElementById("betaStatusCard").style.display = "block";
+
+        const statusResponse = await fetch("/api/status");
+        const statusData = await statusResponse.json();
+
+        document.getElementById("betaStatusResult").textContent =
+          `${statusData.message} / ${statusData.status}`;
+      }
+
+      if (data.flags.canaryBanner.enabled) {
+        document.getElementById("canaryBanner").style.display = "block";
+      }
+
+      document.getElementById("trackClickButton").addEventListener("click", async () => {
+        const trackResponse = await fetch("/api/track", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            userId,
+            eventName: "cta_click",
+            experimentName: "homeHeroCopy",
+            variant,
+            metadata: {
+              button: "trackClickButton",
+            },
+          }),
+        });
+
+        const trackData = await trackResponse.json();
+
+        document.getElementById("trackResult").textContent =
+          `Tracked: ${trackData.event.eventName} / ${trackData.event.variant}`;
+      });
+    }
     checkHealth();
+    loadWeek11Features();
   </script>
 </body>
 </html>
