@@ -1,23 +1,29 @@
 {
   "window": {
-    "since": "2026-04-28T04:16:16Z",
-    "until": "2026-05-28T04:16:16Z",
+    "since": "2026-04-29T04:18:26Z",
+    "until": "2026-05-29T04:18:26Z",
     "days": 30
   },
   "summary": {
-    "lead_time_hours": 0.27,
+    "lead_time_hours": 0.51,
     "deployment_frequency_per_day": 0.0,
     "mttr_hours": null,
     "change_failure_rate_percent": 0.0
   },
   "counts": {
-    "merged_prs": 1,
+    "merged_prs": 2,
     "deployments_success": 0,
     "deployments_failure": 0,
     "incidents": 0
   },
   "events": {
     "merged_prs": [
+      {
+        "number": 32,
+        "title": "feat: 9주차 npm 패키지 GitHub Packages 배포 설정",
+        "merged_at": "2026-05-28T15:04:25Z",
+        "first_commit_at": "2026-05-28T14:18:42Z"
+      },
       {
         "number": 31,
         "title": "fix: restore python ci workflow",
@@ -30,7 +36,7 @@
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-05-28T04:16:16Z",
+    "generated_at": "2026-05-29T04:18:26Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
