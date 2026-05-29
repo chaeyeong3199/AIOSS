@@ -13,3 +13,4 @@ AI OSS 실습 과제 저장 및 관리 공간
 - **[8주차]** 워크플로우 실행 최적화 (재사용/캐싱/조건부) → [`assignments/L08/README.md`](assignments/L08/README.md)
 - **[9주차]** npm 패키지 배포, Docker 이미지 자동화, Dependabot/보안 스캔 설정 → [`assignments/L09/README.md`](assignments/L09/README.md)
 - **[10주차]** 프런트엔드 자동 배포, PR 프리뷰, Docker 배포 파이프라인, 서버리스 헬스체크 → [`assignments/L10/README.md`](assignments/L10/README.md)
+- **[11주차]** Feature Flag, A/B 테스트, Canary Rollout 검증 → [`assignments/L11/README.md`](assignments/L11/README.md)
