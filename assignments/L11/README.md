@@ -62,6 +62,7 @@
 - API 플래그 엔드포인트: https://github.com/chaeyeong3199/AIOSS/blob/main/api/flags.js
 - 트래킹 엔드포인트: https://github.com/chaeyeong3199/AIOSS/blob/main/api/track.js
 - 롤아웃 엔드포인트: https://github.com/chaeyeong3199/AIOSS/blob/main/api/rollout.js
+- PR 프리뷰 URL: https://github.com/chaeyeong3199/AIOSS/pull/36
 
 ## 실행 메모
 
