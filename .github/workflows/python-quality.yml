@@ -13,6 +13,9 @@ on:
         required: false
         type: boolean
         default: true
+        
+permissions:
+  contents: read
 
 jobs:
   quality:
@@ -26,6 +29,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+          fetch-depth: 1
 
       - name: Set up Python and cache dependencies
         id: python-setup
