@@ -14,3 +14,4 @@ AI OSS 실습 과제 저장 및 관리 공간
 - **[9주차]** npm 패키지 배포, Docker 이미지 자동화, Dependabot/보안 스캔 설정 → [`assignments/L09/README.md`](assignments/L09/README.md)
 - **[10주차]** 프런트엔드 자동 배포, PR 프리뷰, Docker 배포 파이프라인, 서버리스 헬스체크 → [`assignments/L10/README.md`](assignments/L10/README.md)
 - **[11주차]** Feature Flag, A/B 테스트, Canary Rollout 검증 → [`assignments/L11/README.md`](assignments/L11/README.md)
+- **[12주차]** 단위 테스트 커버리지 80% 이상 달성, CI 자동 실행, Playwright E2E 시나리오, 레거시 리팩토링 검증 → [`assignments/L12/README.md`](assignments/L12/README.md)
