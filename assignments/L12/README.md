@@ -50,3 +50,7 @@ npm run test:e2e
 https://github.com/chaeyeong3199/AIOSS/blob/main/tests/e2e/dashboard.spec.js
 - Playwright 설정:
 https://github.com/chaeyeong3199/AIOSS/blob/main/playwright.config.js
+
+---
+
+※ 본 README 및 과제 산출물의 일부 코드/문서는 생성형 AI 도구의 도움을 받아 작성되었습니다.
