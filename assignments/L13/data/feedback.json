@@ -1,0 +1,112 @@
+[
+  {
+    "userId": "persona-01",
+    "role": "AIOSS 초급 수강생",
+    "pattern": "설명을 천천히 읽고 버튼을 클릭함",
+    "scenario": "메인 대시보드에서 현재 A/B variant를 확인하고 CTA 버튼을 클릭한다.",
+    "experimentName": "homeHeroCopy",
+    "assignedVariant": "B",
+    "satisfactionScore": 4,
+    "taskSuccess": true,
+    "feedback": "실험 목적과 CTA가 더 명확하게 보여서 다음 행동을 결정하기 쉬웠다."
+  },
+  {
+    "userId": "persona-02",
+    "role": "모바일 중심 사용자",
+    "pattern": "짧은 문구와 눈에 띄는 버튼을 선호함",
+    "scenario": "모바일 화면에서 실험 설명을 확인하고 CTA 버튼을 찾는다.",
+    "experimentName": "homeHeroCopy",
+    "assignedVariant": "A",
+    "satisfactionScore": 4,
+    "taskSuccess": true,
+    "feedback": "기본 문구는 이해 가능하지만 실험 목적과 CTA의 의미가 조금 덜 명확했다."
+  },
+  {
+    "userId": "persona-03",
+    "role": "오픈소스 메인테이너",
+    "pattern": "README, 링크, 실험 근거를 먼저 확인함",
+    "scenario": "실험 문서와 GitHub 링크를 확인한 뒤 기능을 평가한다.",
+    "experimentName": "homeHeroCopy",
+    "assignedVariant": "B",
+    "satisfactionScore": 4,
+    "taskSuccess": true,
+    "feedback": "실험 목적과 CTA가 더 명확하게 보여서 다음 행동을 결정하기 쉬웠다."
+  },
+  {
+    "userId": "persona-04",
+    "role": "QA 테스터",
+    "pattern": "버튼, API 응답, 예외 상황을 꼼꼼히 확인함",
+    "scenario": "Health, Flags, Track API가 정상적으로 작동하는지 확인한다.",
+    "experimentName": "homeHeroCopy",
+    "assignedVariant": "A",
+    "satisfactionScore": 4,
+    "taskSuccess": false,
+    "feedback": "기본 문구는 이해 가능하지만 실험 목적과 CTA의 의미가 조금 덜 명확했다."
+  },
+  {
+    "userId": "persona-05",
+    "role": "DevOps 담당자",
+    "pattern": "배포, 롤아웃, 롤백 가능성을 중요하게 봄",
+    "scenario": "Feature Flag와 Canary 설정이 실험 운영에 적합한지 확인한다.",
+    "experimentName": "homeHeroCopy",
+    "assignedVariant": "B",
+    "satisfactionScore": 4,
+    "taskSuccess": true,
+    "feedback": "실험 목적과 CTA가 더 명확하게 보여서 다음 행동을 결정하기 쉬웠다."
+  },
+  {
+    "userId": "persona-06",
+    "role": "프로덕트 매니저",
+    "pattern": "전환율, 성공률, 사용자 피드백 점수를 우선 확인함",
+    "scenario": "Variant별 핵심 지표를 비교하고 의사결정 근거를 검토한다.",
+    "experimentName": "homeHeroCopy",
+    "assignedVariant": "A",
+    "satisfactionScore": 4,
+    "taskSuccess": true,
+    "feedback": "기본 문구는 이해 가능하지만 실험 목적과 CTA의 의미가 조금 덜 명확했다."
+  },
+  {
+    "userId": "persona-07",
+    "role": "보안 리뷰어",
+    "pattern": "API 입력값과 로그에 민감함",
+    "scenario": "Track API의 payload와 기록 방식이 과도하지 않은지 확인한다.",
+    "experimentName": "homeHeroCopy",
+    "assignedVariant": "B",
+    "satisfactionScore": 4,
+    "taskSuccess": true,
+    "feedback": "실험 목적과 CTA가 더 명확하게 보여서 다음 행동을 결정하기 쉬웠다."
+  },
+  {
+    "userId": "persona-08",
+    "role": "성급한 사용자",
+    "pattern": "문구를 자세히 읽지 않고 바로 클릭함",
+    "scenario": "첫 화면에서 CTA 버튼이 충분히 명확한지 확인한다.",
+    "experimentName": "homeHeroCopy",
+    "assignedVariant": "A",
+    "satisfactionScore": 4,
+    "taskSuccess": true,
+    "feedback": "기본 문구는 이해 가능하지만 실험 목적과 CTA의 의미가 조금 덜 명확했다."
+  },
+  {
+    "userId": "persona-09",
+    "role": "접근성 관심 사용자",
+    "pattern": "텍스트 명확성, 버튼 위치, 이해 가능성을 평가함",
+    "scenario": "실험 variant 문구가 이해하기 쉬운지 평가한다.",
+    "experimentName": "homeHeroCopy",
+    "assignedVariant": "B",
+    "satisfactionScore": 4,
+    "taskSuccess": true,
+    "feedback": "실험 목적과 CTA가 더 명확하게 보여서 다음 행동을 결정하기 쉬웠다."
+  },
+  {
+    "userId": "persona-11",
+    "role": "기존 재방문 사용자",
+    "pattern": "이전 주차 결과와 비교해 변화 여부를 확인함",
+    "scenario": "Week 11/12 대비 Week 13 실험 운영이 개선되었는지 확인한다.",
+    "experimentName": "homeHeroCopy",
+    "assignedVariant": "A",
+    "satisfactionScore": 4,
+    "taskSuccess": false,
+    "feedback": "기본 문구는 이해 가능하지만 실험 목적과 CTA의 의미가 조금 덜 명확했다."
+  }
+]
