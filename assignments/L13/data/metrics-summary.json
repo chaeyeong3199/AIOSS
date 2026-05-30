@@ -1,0 +1,29 @@
+{
+  "experimentName": "homeHeroCopy",
+  "period": {
+    "start": "2026-05-30",
+    "end": "2026-06-12",
+    "days": 14
+  },
+  "metrics": {
+    "A": {
+      "exposures": 70,
+      "ctaClicks": 37,
+      "taskCompletes": 48,
+      "feedbackCount": 5,
+      "averageScore": 4,
+      "clickRate": 0.5286,
+      "completionRate": 0.6857
+    },
+    "B": {
+      "exposures": 70,
+      "ctaClicks": 49,
+      "taskCompletes": 59,
+      "feedbackCount": 5,
+      "averageScore": 4,
+      "clickRate": 0.7,
+      "completionRate": 0.8429
+    }
+  },
+  "decision": "persevere"
+}

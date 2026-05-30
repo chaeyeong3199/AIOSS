@@ -1,0 +1,2333 @@
+[
+  {
+    "date": "2026-05-29",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-29",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-30",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-05-31",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-01",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-02",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-03",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-04",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-05",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-06",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-07",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-08",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-09",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-10",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-01",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-02",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-03",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-04",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-05",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-06",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-07",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-08",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-09",
+    "experimentName": "homeHeroCopy",
+    "variant": "B",
+    "eventName": "task_complete"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "experiment_exposure"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "cta_click"
+  },
+  {
+    "date": "2026-06-11",
+    "userId": "persona-11",
+    "experimentName": "homeHeroCopy",
+    "variant": "A",
+    "eventName": "task_complete"
+  }
+]

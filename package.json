@@ -12,7 +12,9 @@
     "test": "node --test",
     "test:coverage": "c8 --check-coverage --lines 80 --branches 80 --functions 80 --statements 80 --include src/**/*.js --exclude src/server.js node --test",
     "test:e2e": "playwright test",
-    "audit:ci": "npm audit --audit-level=moderate"
+    "audit:ci": "npm audit --audit-level=moderate",
+    "experiment:l13": "node scripts/generate-week13-data.js",
+    "report:l13": "node scripts/summarize-week13-metrics.js"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

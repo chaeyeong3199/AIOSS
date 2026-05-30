@@ -106,7 +106,7 @@
     </p>
   </div>
 
-  <div class="card">
+  <div class="card" id="doraDashboardCard" style="display: none;">
     <h2>DORA Dashboard</h2>
     <p>
       기존 DORA 지표 대시보드는 <a href="/dora-dashboard.html">여기</a>에서 확인할 수 있습니다.
@@ -190,6 +190,9 @@
 
       if (data.flags.canaryBanner.enabled) {
         document.getElementById("canaryBanner").style.display = "block";
+      }
+      if (data.flags.doraDashboard.enabled) {
+        document.getElementById("doraDashboardCard").style.display = "block";
       }
 
       document.getElementById("trackClickButton").addEventListener("click", async () => {
