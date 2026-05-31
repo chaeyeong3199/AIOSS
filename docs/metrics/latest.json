@@ -1,24 +1,87 @@
 {
   "window": {
-    "since": "2026-04-30T04:03:32Z",
-    "until": "2026-05-30T04:03:32Z",
+    "since": "2026-05-01T04:38:53Z",
+    "until": "2026-05-31T04:38:53Z",
     "days": 30
   },
   "summary": {
-    "lead_time_hours": null,
-    "deployment_frequency_per_day": 0.2667,
+    "lead_time_hours": 0.31,
+    "deployment_frequency_per_day": 0.4333,
     "mttr_hours": null,
     "change_failure_rate_percent": 0.0
   },
   "counts": {
-    "merged_prs": 0,
-    "deployments_success": 8,
+    "merged_prs": 2,
+    "deployments_success": 13,
     "deployments_failure": 0,
     "incidents": 0
   },
   "events": {
-    "merged_prs": [],
+    "merged_prs": [
+      {
+        "number": 62,
+        "title": "Add Week 13 Lean Startup Experiment Records",
+        "merged_at": "2026-05-30T16:29:12Z",
+        "first_commit_at": "2026-05-30T15:59:05Z"
+      },
+      {
+        "number": 37,
+        "title": "test: add week 12 coverage and api tests",
+        "merged_at": "2026-05-30T07:49:07Z",
+        "first_commit_at": "2026-05-30T07:42:02Z"
+      }
+    ],
     "deployments": [
+      {
+        "id": 4873911449,
+        "sha": "d4f68faf504cf54035753ae8db822b217375b967",
+        "environment": "Production",
+        "created_at": "2026-05-30T16:29:23Z",
+        "status_state": "success",
+        "status_at": "2026-05-30T16:29:24Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4871212778,
+        "sha": "e0a2fa192a0408c4a034421f9a02ed48a1ed0a5f",
+        "environment": "Production",
+        "created_at": "2026-05-30T07:54:52Z",
+        "status_state": "success",
+        "status_at": "2026-05-30T07:54:53Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4871185292,
+        "sha": "b78f85c84b27ec72ea4a948be2f2fd91322eff8a",
+        "environment": "Production",
+        "created_at": "2026-05-30T07:49:20Z",
+        "status_state": "success",
+        "status_at": "2026-05-30T07:49:20Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4870764033,
+        "sha": "508af918f7547c5e2ad092fa63d1c95ba30d2f0b",
+        "environment": "Production",
+        "created_at": "2026-05-30T06:18:04Z",
+        "status_state": "success",
+        "status_at": "2026-05-30T06:18:05Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4870166687,
+        "sha": "76d8ad588dc5454b9d96adf844643b3f84ef7f71",
+        "environment": "Production",
+        "created_at": "2026-05-30T04:03:49Z",
+        "status_state": "success",
+        "status_at": "2026-05-30T04:03:49Z",
+        "is_success": true,
+        "is_failure": false
+      },
       {
         "id": 4863934848,
         "sha": "aac294e7e298d86e31c0195b91ac86a37fe54e22",
@@ -104,7 +167,7 @@
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-05-30T04:03:32Z",
+    "generated_at": "2026-05-31T04:38:53Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
