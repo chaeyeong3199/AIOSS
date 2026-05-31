@@ -35,9 +35,9 @@ function analyzeDelivery(text = "") {
   if (score < 50) riskLevel = "high";
   else if (score < 80) riskLevel = "medium";
 
-  const recommendations = missing.slice(0, 5).map((item) => {
-    return `${item.label} 항목을 README 또는 제출 문서에 명확히 추가하세요.`;
-  });
+  const recommendations = missing.slice(0, 5).map((item) =>
+    `${item.label} 항목을 README 또는 제출 문서에 명확히 추가하세요.`
+  );
 
   return {
     score,

@@ -1,4 +1,4 @@
-const { analyzeDelivery } = require("../src/aiAdvisor");
+const { analyzeDelivery } = require("../../src/aiAdvisor");
 
 function readBody(req) {
   return new Promise((resolve) => {
@@ -36,6 +36,7 @@ module.exports = async (req, res) => {
   if (req.method !== "POST") {
     res.status(405).json({
       error: "Method Not Allowed",
+      allowed: "POST",
     });
     return;
   }

@@ -81,20 +81,20 @@ function createApp() {
   });
 
   app.post("/api/ai/advisor", (req, res) => {
-  const result = analyzeDelivery(req.body.text || "");
+    const result = analyzeDelivery(req.body.text || "");
 
-  console.log("[ai-advisor]", JSON.stringify({
-    timestamp: new Date().toISOString(),
-    score: result.score,
-    riskLevel: result.riskLevel,
-  }));
+    console.log("[ai-advisor]", JSON.stringify({
+      timestamp: new Date().toISOString(),
+      score: result.score,
+      riskLevel: result.riskLevel,
+    }));
 
-  res.json({
-    ok: true,
-    feature: "AI OSS Delivery Advisor",
-    result,
+    res.json({
+      ok: true,
+      feature: "AI OSS Delivery Advisor",
+      result,
+    });
   });
-});
 
   return app;
 }
