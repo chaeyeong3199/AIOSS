@@ -16,3 +16,4 @@ AI OSS 실습 과제 저장 및 관리 공간
 - **[11주차]** Feature Flag, A/B 테스트, Canary Rollout 검증 → [`assignments/L11/README.md`](assignments/L11/README.md)
 - **[12주차]** 단위 테스트 커버리지 80% 이상 달성, CI 자동 실행, Playwright E2E 시나리오, 레거시 리팩토링 검증 → [`assignments/L12/README.md`](assignments/L12/README.md)
 - **[13주차]** Lean Startup 실험 운영 — 사용자 페르소나 피드백, A/B 테스트 운영, 실험 리포트 → [`assignments/L13/README.md`](assignments/L13/README.md)
+- **[14주차]** AI OSS 최종 제출 — 공개 저장소 문서, AI 기능, CI/CD, 배포, 헬스체크, 롤백, 관측성, 보안, 회고, 데모 → [`assignments/L14/README.md`](assignments/L14/README.md)

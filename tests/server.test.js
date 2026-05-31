@@ -92,3 +92,26 @@ test("POST /api/track returns tracking event", async () => {
     server.close();
   }
 });
+
+test("POST /api/ai/advisor returns delivery analysis", async () => {
+  const { server, baseUrl } = await startTestServer();
+
+  try {
+    const response = await fetch(`${baseUrl}/api/ai/advisor`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        text: "README test health deploy rollback security dashboard release demo",
+      }),
+    });
+
+    const body = await response.json();
+
+    assert.equal(response.status, 200);
+    assert.equal(body.ok, true);
+    assert.equal(body.feature, "AI OSS Delivery Advisor");
+    assert.ok(body.result.score >= 50);
+  } finally {
+    server.close();
+  }
+});

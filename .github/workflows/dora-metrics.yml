@@ -29,7 +29,7 @@ jobs:
           python scripts/collect_dora_metrics.py
 
       - name: Upload metric artifacts
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v6
         with:
           name: dora-metrics
           path: docs/metrics/

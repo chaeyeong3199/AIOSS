@@ -62,7 +62,7 @@ jobs:
           NODE
 
       - name: Upload npm audit report
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v6
         with:
           name: npm-audit-report
           path: reports/
@@ -151,7 +151,7 @@ jobs:
           npx snyk test --severity-threshold=high --json-file-output=reports/snyk.json || true
 
       - name: Upload Snyk report
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v6
         with:
           name: snyk-report
           path: reports/

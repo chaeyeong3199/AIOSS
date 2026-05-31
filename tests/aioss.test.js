@@ -1,6 +1,7 @@
 const test = require("node:test");
 const assert = require("node:assert/strict");
 const { hello } = require("../src/index");
+const { analyzeDelivery } = require("../src/aiAdvisor");
 
 const {
   parseBoolean,
@@ -132,4 +133,16 @@ test("canary rollout bucket and decision logic are deterministic", () => {
     nextPercent: 50,
     reason: "health check passed",
   });
+});
+
+test("AI advisor analyzes delivery readiness", () => {
+  const result = analyzeDelivery(
+    "README LICENSE test coverage health rollback dependabot dashboard v1.0.2 retrospective demo video"
+  );
+
+  assert.ok(result.score >= 70);
+  assert.ok(["low", "medium", "high"].includes(result.riskLevel));
+  assert.ok(Array.isArray(result.completed));
+  assert.ok(Array.isArray(result.missing));
+  assert.ok(Array.isArray(result.recommendations));
 });

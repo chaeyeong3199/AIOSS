@@ -4,6 +4,7 @@ const { hello } = require("./index");
 const { getAllFlags, getUserId } = require("./featureFlags");
 const { getAssignments, trackEvent } = require("./experiments");
 const { isUserInCanary } = require("./canary");
+const { analyzeDelivery } = require("./aiAdvisor");
 
 function createApp() {
   const app = express();
@@ -78,6 +79,22 @@ function createApp() {
       event,
     });
   });
+
+  app.post("/api/ai/advisor", (req, res) => {
+  const result = analyzeDelivery(req.body.text || "");
+
+  console.log("[ai-advisor]", JSON.stringify({
+    timestamp: new Date().toISOString(),
+    score: result.score,
+    riskLevel: result.riskLevel,
+  }));
+
+  res.json({
+    ok: true,
+    feature: "AI OSS Delivery Advisor",
+    result,
+  });
+});
 
   return app;
 }
