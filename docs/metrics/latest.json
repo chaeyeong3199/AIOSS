@@ -1,23 +1,29 @@
 {
   "window": {
-    "since": "2026-05-01T04:38:53Z",
-    "until": "2026-05-31T04:38:53Z",
+    "since": "2026-05-02T05:00:32Z",
+    "until": "2026-06-01T05:00:32Z",
     "days": 30
   },
   "summary": {
-    "lead_time_hours": 0.31,
-    "deployment_frequency_per_day": 0.4333,
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.5,
     "mttr_hours": null,
     "change_failure_rate_percent": 0.0
   },
   "counts": {
-    "merged_prs": 2,
-    "deployments_success": 13,
+    "merged_prs": 3,
+    "deployments_success": 15,
     "deployments_failure": 0,
     "incidents": 0
   },
   "events": {
     "merged_prs": [
+      {
+        "number": 63,
+        "title": "feat: add week14 final AI OSS delivery package",
+        "merged_at": "2026-05-31T07:33:38Z",
+        "first_commit_at": "2026-05-31T07:02:45Z"
+      },
       {
         "number": 62,
         "title": "Add Week 13 Lean Startup Experiment Records",
@@ -32,6 +38,26 @@
       }
     ],
     "deployments": [
+      {
+        "id": 4878248280,
+        "sha": "a01903c225250db26005480ac016d89774a412e9",
+        "environment": "Production",
+        "created_at": "2026-05-31T07:33:49Z",
+        "status_state": "success",
+        "status_at": "2026-05-31T07:33:49Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4877493338,
+        "sha": "f81c2aba4d849d4ce4680779e56d1afe44516882",
+        "environment": "Production",
+        "created_at": "2026-05-31T04:39:09Z",
+        "status_state": "success",
+        "status_at": "2026-05-31T04:39:10Z",
+        "is_success": true,
+        "is_failure": false
+      },
       {
         "id": 4873911449,
         "sha": "d4f68faf504cf54035753ae8db822b217375b967",
@@ -167,7 +193,7 @@
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-05-31T04:38:53Z",
+    "generated_at": "2026-06-01T05:00:32Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
