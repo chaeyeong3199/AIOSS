@@ -19,7 +19,7 @@ Week 14에서는 AI OSS 최종 프로젝트를 제출 기준에 맞게 정리했
 - 보안: [Dependabot](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/dependabot.yml), [security scan workflow](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/workflows/security-scan.yml)
 - 문서: [CHANGELOG](https://github.com/chaeyeong3199/AIOSS/blob/main/CHANGELOG.md)와 [RETROSPECTIVE](https://github.com/chaeyeong3199/AIOSS/blob/main/RETROSPECTIVE.md)
 - 릴리스 태그: [v1.0.0](https://github.com/chaeyeong3199/AIOSS/releases/tag/v1.0.0), [v1.0.1](https://github.com/chaeyeong3199/AIOSS/releases/tag/v1.0.1), [태그 목록](https://github.com/chaeyeong3199/AIOSS/tags)
-- 3분 이내 영상 데모: 최종 제출용 영상 링크를 함께 첨부
+- 3분 이내 영상 데모: [데모.mp4](데모.mp4)
 
 ## AI 기능
 
