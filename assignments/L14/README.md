@@ -9,9 +9,9 @@ Week 14에서는 AI OSS 최종 프로젝트를 제출 기준에 맞게 정리했
 ## 제출 체크리스트
 
 - 공개 저장소 문서: [README](https://github.com/chaeyeong3199/AIOSS/blob/main/README.md), [CONTRIBUTING](https://github.com/chaeyeong3199/AIOSS/blob/main/CONTRIBUTING.md), [CODE_OF_CONDUCT](https://github.com/chaeyeong3199/AIOSS/blob/main/CODE_OF_CONDUCT.md), [LICENSE](https://github.com/chaeyeong3199/AIOSS/blob/main/LICENSE)
-- 동작 가능한 AI 기능: [API](https://github.com/chaeyeong3199/AIOSS/blob/main/api/ai.js) + [UI](https://github.com/chaeyeong3199/AIOSS/blob/main/public/index.html)
+- 동작 가능한 AI 기능: [API](https://github.com/chaeyeong3199/AIOSS/blob/main/api/ai/advisor.js) + [UI](https://github.com/chaeyeong3199/AIOSS/blob/main/public/index.html)
 - PR 게이트 CI/CD: [Node Package Publish workflow](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/workflows/node-package.yml)
-- main 배포: [Docker build/publish workflow](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/workflows/docker-publish.yml), [Deployment Preview](https://github.com/chaeyeong3199/AIOSS/deployments/Preview), Vercel 배포 구성
+- main 배포: [Docker build/publish workflow](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/workflows/docker-publish.yml), [Vercel Live Deployment](https://aioss.vercel.app/), Vercel 배포 구성
 - 헬스체크: [API](https://github.com/chaeyeong3199/AIOSS/blob/main/api/health.js)와 대시보드의 `/health`
 - 롤백 계획: Canary 실패 시 직전 단계로 되돌리는 흐름과 이전 태그 재배포 전략
 - 관측성: [DORA metrics workflow](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/workflows/dora-metrics.yml), [metrics snapshot](https://github.com/chaeyeong3199/AIOSS/blob/main/docs/metrics/latest.json), [dashboard](https://github.com/chaeyeong3199/AIOSS/blob/main/public/dora-dashboard.html)
@@ -50,7 +50,7 @@ npm run test:coverage
 
 ## 관련 산출물
 
-- [AI Advisor API](https://github.com/chaeyeong3199/AIOSS/blob/main/api/ai.js)
+- [AI Advisor API](https://github.com/chaeyeong3199/AIOSS/blob/main/api/ai/advisor.js)
 - [AI Advisor 로직](https://github.com/chaeyeong3199/AIOSS/blob/main/src/aiAdvisor.js)
 - [대시보드 UI](https://github.com/chaeyeong3199/AIOSS/blob/main/public/index.html)
 - [헬스체크 API](https://github.com/chaeyeong3199/AIOSS/blob/main/api/health.js)
