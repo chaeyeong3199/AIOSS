@@ -4,20 +4,20 @@ Week 14에서는 AI OSS 최종 프로젝트를 제출 기준에 맞게 정리했
 
 ## 최종 프로젝트 GitHub 링크
 
-- Repository: https://github.com/chaeyeong3199/AIOSS
+- [Repository](https://github.com/chaeyeong3199/AIOSS)
 
 ## 제출 체크리스트
 
-- 공개 저장소 문서: [README](../../README.md), [CONTRIBUTING](../../CONTRIBUTING.md), [CODE_OF_CONDUCT](../../CODE_OF_CONDUCT.md), [LICENSE](../../LICENSE)
-- 동작 가능한 AI 기능: [API](../../api/ai.js) + [UI](../../public/index.html)
-- PR 게이트 CI/CD: [Node Package Publish workflow](../../.github/workflows/node-package.yml)
-- main 배포: [Docker build/publish workflow](../../.github/workflows/docker-publish.yml)와 Vercel 배포 구성
-- 헬스체크: [`/api/health`](../../api/health.js)와 대시보드의 `/health`
+- 공개 저장소 문서: [README](https://github.com/chaeyeong3199/AIOSS/blob/main/README.md), [CONTRIBUTING](https://github.com/chaeyeong3199/AIOSS/blob/main/CONTRIBUTING.md), [CODE_OF_CONDUCT](https://github.com/chaeyeong3199/AIOSS/blob/main/CODE_OF_CONDUCT.md), [LICENSE](https://github.com/chaeyeong3199/AIOSS/blob/main/LICENSE)
+- 동작 가능한 AI 기능: [API](https://github.com/chaeyeong3199/AIOSS/blob/main/api/ai.js) + [UI](https://github.com/chaeyeong3199/AIOSS/blob/main/public/index.html)
+- PR 게이트 CI/CD: [Node Package Publish workflow](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/workflows/node-package.yml)
+- main 배포: [Docker build/publish workflow](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/workflows/docker-publish.yml)와 Vercel 배포 구성
+- 헬스체크: [API](https://github.com/chaeyeong3199/AIOSS/blob/main/api/health.js)와 대시보드의 `/health`
 - 롤백 계획: Canary 실패 시 직전 단계로 되돌리는 흐름과 이전 태그 재배포 전략
-- 관측성: [DORA metrics workflow](../../.github/workflows/dora-metrics.yml), [metrics snapshot](../../docs/metrics/latest.json), [dashboard](../../public/dora-dashboard.html)
+- 관측성: [DORA metrics workflow](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/workflows/dora-metrics.yml), [metrics snapshot](https://github.com/chaeyeong3199/AIOSS/blob/main/docs/metrics/latest.json), [dashboard](https://github.com/chaeyeong3199/AIOSS/blob/main/public/dora-dashboard.html)
 - 테스트: 단위 테스트, 통합성 HTTP 검증, Playwright E2E, AI Advisor mini eval 성격의 검증
-- 보안: [Dependabot](../../.github/dependabot.yml), [security scan workflow](../../.github/workflows/security-scan.yml)
-- 문서: [CHANGELOG](../../CHANGELOG.md)와 [RETROSPECTIVE](../../RETROSPECTIVE.md)
+- 보안: [Dependabot](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/dependabot.yml), [security scan workflow](https://github.com/chaeyeong3199/AIOSS/blob/main/.github/workflows/security-scan.yml)
+- 문서: [CHANGELOG](https://github.com/chaeyeong3199/AIOSS/blob/main/CHANGELOG.md)와 [RETROSPECTIVE](https://github.com/chaeyeong3199/AIOSS/blob/main/RETROSPECTIVE.md)
 - 릴리스 태그: `v1.0.0`, `v1.0.1`
 - 3분 이내 영상 데모: 최종 제출용 영상 링크를 함께 첨부
 
@@ -50,12 +50,12 @@ npm run test:coverage
 
 ## 관련 산출물
 
-- [AI Advisor API](../../api/ai.js)
-- [AI Advisor 로직](../../src/aiAdvisor.js)
-- [대시보드 UI](../../public/index.html)
-- [헬스체크 API](../../api/health.js)
-- [상태 API](../../api/status.js)
-- [테스트](../../tests/aioss.test.js)
+- [AI Advisor API](https://github.com/chaeyeong3199/AIOSS/blob/main/api/ai.js)
+- [AI Advisor 로직](https://github.com/chaeyeong3199/AIOSS/blob/main/src/aiAdvisor.js)
+- [대시보드 UI](https://github.com/chaeyeong3199/AIOSS/blob/main/public/index.html)
+- [헬스체크 API](https://github.com/chaeyeong3199/AIOSS/blob/main/api/health.js)
+- [상태 API](https://github.com/chaeyeong3199/AIOSS/blob/main/api/status.js)
+- [테스트](https://github.com/chaeyeong3199/AIOSS/blob/main/tests/aioss.test.js)
 
 ---
 
