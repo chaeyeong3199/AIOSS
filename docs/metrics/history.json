@@ -292,5 +292,117 @@
     "deployment_frequency_per_day": 0.4333,
     "mttr_hours": null,
     "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-01",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.5,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-02",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.5333,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-03",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.5667,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-04",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.6,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-05",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.6333,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-06",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.6667,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-07",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.7,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-08",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.7333,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-09",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.7667,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-10",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.8,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-11",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.8333,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-12",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.8667,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-13",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.9,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-14",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.9333,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-15",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 0.9667,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
+  },
+  {
+    "date": "2026-06-16",
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 1.0,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 0.0
   }
 ]

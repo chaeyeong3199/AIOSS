@@ -1,23 +1,29 @@
 {
   "window": {
-    "since": "2026-05-01T04:38:53Z",
-    "until": "2026-05-31T04:38:53Z",
+    "since": "2026-05-17T05:12:40Z",
+    "until": "2026-06-16T05:12:40Z",
     "days": 30
   },
   "summary": {
-    "lead_time_hours": 0.31,
-    "deployment_frequency_per_day": 0.4333,
+    "lead_time_hours": 0.38,
+    "deployment_frequency_per_day": 1.0,
     "mttr_hours": null,
     "change_failure_rate_percent": 0.0
   },
   "counts": {
-    "merged_prs": 2,
-    "deployments_success": 13,
+    "merged_prs": 3,
+    "deployments_success": 30,
     "deployments_failure": 0,
     "incidents": 0
   },
   "events": {
     "merged_prs": [
+      {
+        "number": 63,
+        "title": "feat: add week14 final AI OSS delivery package",
+        "merged_at": "2026-05-31T07:33:38Z",
+        "first_commit_at": "2026-05-31T07:02:45Z"
+      },
       {
         "number": 62,
         "title": "Add Week 13 Lean Startup Experiment Records",
@@ -32,6 +38,176 @@
       }
     ],
     "deployments": [
+      {
+        "id": 5060104766,
+        "sha": "129a0301f3ff9b8b46f533be21738746f7687332",
+        "environment": "Production",
+        "created_at": "2026-06-15T05:10:23Z",
+        "status_state": "success",
+        "status_at": "2026-06-15T05:10:23Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 5051536315,
+        "sha": "de0c2ccaa709b7a451307aaf4bf413fd85b0f4a0",
+        "environment": "Production",
+        "created_at": "2026-06-14T04:53:23Z",
+        "status_state": "success",
+        "status_at": "2026-06-14T04:53:23Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 5043720498,
+        "sha": "2a2ed307d613475cbac1767843f4570df4dadb2f",
+        "environment": "Production",
+        "created_at": "2026-06-13T04:26:08Z",
+        "status_state": "success",
+        "status_at": "2026-06-13T04:26:08Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 5030364034,
+        "sha": "744b76a39dce0e7b30fccbb755f29f560a3b313c",
+        "environment": "Production",
+        "created_at": "2026-06-12T04:47:30Z",
+        "status_state": "success",
+        "status_at": "2026-06-12T04:47:31Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 5014953889,
+        "sha": "3c84a1ac293b6ca7ee206f2488af8d93e32b50a7",
+        "environment": "Production",
+        "created_at": "2026-06-11T04:44:49Z",
+        "status_state": "success",
+        "status_at": "2026-06-11T04:44:49Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4999522631,
+        "sha": "c9ba063f75795f266894d6f54ca7e6f8c08cde0a",
+        "environment": "Production",
+        "created_at": "2026-06-10T04:22:27Z",
+        "status_state": "success",
+        "status_at": "2026-06-10T04:22:27Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4984473267,
+        "sha": "64c72120d881ec7fe261d9041d02b079122f18ab",
+        "environment": "Production",
+        "created_at": "2026-06-09T04:11:18Z",
+        "status_state": "success",
+        "status_at": "2026-06-09T04:11:19Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4970351643,
+        "sha": "28643cdab0537bbe962eba898955003701318614",
+        "environment": "Production",
+        "created_at": "2026-06-08T04:49:07Z",
+        "status_state": "success",
+        "status_at": "2026-06-08T04:49:07Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4962312282,
+        "sha": "c74fb58c7fb2398cc2108f52e00c0f82cd330053",
+        "environment": "Production",
+        "created_at": "2026-06-07T04:44:03Z",
+        "status_state": "success",
+        "status_at": "2026-06-07T04:44:04Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4954791479,
+        "sha": "a5fa40c74859f81e919d84aed30599c7f62d5b08",
+        "environment": "Production",
+        "created_at": "2026-06-06T04:07:41Z",
+        "status_state": "success",
+        "status_at": "2026-06-06T04:07:41Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4942337382,
+        "sha": "d5c91cac0ac19fa83fffbba87d17f27b2ed7137e",
+        "environment": "Production",
+        "created_at": "2026-06-05T04:25:06Z",
+        "status_state": "success",
+        "status_at": "2026-06-05T04:25:06Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4928510257,
+        "sha": "755fc40848eb931d5cb03c02aa6670fd89ceb4fd",
+        "environment": "Production",
+        "created_at": "2026-06-04T04:50:06Z",
+        "status_state": "success",
+        "status_at": "2026-06-04T04:50:07Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4914080071,
+        "sha": "6e59ac55d778d9c1ca6d197d55453257ca347c32",
+        "environment": "Production",
+        "created_at": "2026-06-03T04:57:18Z",
+        "status_state": "success",
+        "status_at": "2026-06-03T04:57:18Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4899549081,
+        "sha": "5f628347cbb0f9875a780cd5ad4c1a3c4d78a5a0",
+        "environment": "Production",
+        "created_at": "2026-06-02T04:47:12Z",
+        "status_state": "success",
+        "status_at": "2026-06-02T04:47:12Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4885604900,
+        "sha": "b7cf63fd6771a04952d5fb5cd13dc265e7d71901",
+        "environment": "Production",
+        "created_at": "2026-06-01T05:00:49Z",
+        "status_state": "success",
+        "status_at": "2026-06-01T05:00:50Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4878248280,
+        "sha": "a01903c225250db26005480ac016d89774a412e9",
+        "environment": "Production",
+        "created_at": "2026-05-31T07:33:49Z",
+        "status_state": "success",
+        "status_at": "2026-05-31T07:33:49Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 4877493338,
+        "sha": "f81c2aba4d849d4ce4680779e56d1afe44516882",
+        "environment": "Production",
+        "created_at": "2026-05-31T04:39:09Z",
+        "status_state": "success",
+        "status_at": "2026-05-31T04:39:10Z",
+        "is_success": true,
+        "is_failure": false
+      },
       {
         "id": 4873911449,
         "sha": "d4f68faf504cf54035753ae8db822b217375b967",
@@ -167,7 +343,7 @@
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-05-31T04:38:53Z",
+    "generated_at": "2026-06-16T05:12:40Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
