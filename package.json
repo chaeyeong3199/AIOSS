@@ -38,7 +38,7 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "@playwright/test": "^1.60.0",
+    "@playwright/test": "^1.61.0",
     "c8": "^11.0.0"
   }
 }
