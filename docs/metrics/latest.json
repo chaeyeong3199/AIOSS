@@ -1,23 +1,29 @@
 {
   "window": {
-    "since": "2026-05-22T05:02:40Z",
-    "until": "2026-06-21T05:02:40Z",
+    "since": "2026-05-23T05:10:46Z",
+    "until": "2026-06-22T05:10:46Z",
     "days": 30
   },
   "summary": {
-    "lead_time_hours": 0.38,
-    "deployment_frequency_per_day": 1.2333,
+    "lead_time_hours": 0.28,
+    "deployment_frequency_per_day": 1.3,
     "mttr_hours": null,
-    "change_failure_rate_percent": 11.9
+    "change_failure_rate_percent": 11.36
   },
   "counts": {
-    "merged_prs": 3,
-    "deployments_success": 37,
+    "merged_prs": 4,
+    "deployments_success": 39,
     "deployments_failure": 5,
     "incidents": 0
   },
   "events": {
     "merged_prs": [
+      {
+        "number": 68,
+        "title": "chore(deps-dev): bump @playwright/test from 1.60.0 to 1.61.0 in the npm-development group",
+        "merged_at": "2026-06-22T00:10:51Z",
+        "first_commit_at": "2026-06-22T00:10:36Z"
+      },
       {
         "number": 63,
         "title": "feat: add week14 final AI OSS delivery package",
@@ -38,6 +44,26 @@
       }
     ],
     "deployments": [
+      {
+        "id": 5144902847,
+        "sha": "386aeb019d9890a0a019c7583944dc750d06b218",
+        "environment": "Production",
+        "created_at": "2026-06-22T00:11:05Z",
+        "status_state": "success",
+        "status_at": "2026-06-22T00:11:05Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 5138471279,
+        "sha": "bac0273cf00b1fb2fd6eeae8c20f0d2f94501c2b",
+        "environment": "Production",
+        "created_at": "2026-06-21T05:03:08Z",
+        "status_state": "success",
+        "status_at": "2026-06-21T05:03:09Z",
+        "is_success": true,
+        "is_failure": false
+      },
       {
         "id": 5130745077,
         "sha": "02e17113f5bd5bf71453fde5574b4db6d1099285",
@@ -463,7 +489,7 @@
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-06-21T05:02:40Z",
+    "generated_at": "2026-06-22T05:10:46Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
