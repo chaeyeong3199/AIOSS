@@ -474,5 +474,12 @@
     "deployment_frequency_per_day": 1.4333,
     "mttr_hours": null,
     "change_failure_rate_percent": 10.42
+  },
+  {
+    "date": "2026-06-27",
+    "lead_time_hours": 0.28,
+    "deployment_frequency_per_day": 1.4667,
+    "mttr_hours": null,
+    "change_failure_rate_percent": 10.2
   }
 ]
