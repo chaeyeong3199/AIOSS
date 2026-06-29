@@ -1,23 +1,29 @@
 {
   "window": {
-    "since": "2026-05-29T04:26:43Z",
-    "until": "2026-06-28T04:26:43Z",
+    "since": "2026-05-30T04:46:10Z",
+    "until": "2026-06-29T04:46:10Z",
     "days": 30
   },
   "summary": {
-    "lead_time_hours": 0.28,
-    "deployment_frequency_per_day": 1.5,
+    "lead_time_hours": 0.23,
+    "deployment_frequency_per_day": 1.2667,
     "mttr_hours": null,
-    "change_failure_rate_percent": 10.0
+    "change_failure_rate_percent": 11.63
   },
   "counts": {
-    "merged_prs": 4,
-    "deployments_success": 45,
+    "merged_prs": 5,
+    "deployments_success": 38,
     "deployments_failure": 5,
     "incidents": 0
   },
   "events": {
     "merged_prs": [
+      {
+        "number": 70,
+        "title": "chore(deps-dev): bump @playwright/test from 1.61.0 to 1.61.1 in the npm-development group",
+        "merged_at": "2026-06-29T00:11:44Z",
+        "first_commit_at": "2026-06-29T00:11:30Z"
+      },
       {
         "number": 68,
         "title": "chore(deps-dev): bump @playwright/test from 1.60.0 to 1.61.0 in the npm-development group",
@@ -44,6 +50,26 @@
       }
     ],
     "deployments": [
+      {
+        "id": 5232761582,
+        "sha": "768a079cff8d320b17a4f1dfc15b3b332f5c34dc",
+        "environment": "Production",
+        "created_at": "2026-06-29T00:12:01Z",
+        "status_state": "success",
+        "status_at": "2026-06-29T00:12:02Z",
+        "is_success": true,
+        "is_failure": false
+      },
+      {
+        "id": 5226013205,
+        "sha": "4ec4e231b1ce03a32d613b3da8bd2504d59bd770",
+        "environment": "Production",
+        "created_at": "2026-06-28T04:27:20Z",
+        "status_state": "success",
+        "status_at": "2026-06-28T04:27:20Z",
+        "is_success": true,
+        "is_failure": false
+      },
       {
         "id": 5218312177,
         "sha": "a98df18f82b0f0051fd7506c607f9e6d63a4ee80",
@@ -453,103 +479,13 @@
         "status_at": "2026-05-30T06:18:05Z",
         "is_success": true,
         "is_failure": false
-      },
-      {
-        "id": 4870166687,
-        "sha": "76d8ad588dc5454b9d96adf844643b3f84ef7f71",
-        "environment": "Production",
-        "created_at": "2026-05-30T04:03:49Z",
-        "status_state": "success",
-        "status_at": "2026-05-30T04:03:49Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 4863934848,
-        "sha": "aac294e7e298d86e31c0195b91ac86a37fe54e22",
-        "environment": "Production",
-        "created_at": "2026-05-29T15:01:06Z",
-        "status_state": "success",
-        "status_at": "2026-05-29T15:01:06Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 4863883122,
-        "sha": "8dd91eadd297149e9d690db10b8950faabd0d594",
-        "environment": "Production",
-        "created_at": "2026-05-29T14:56:53Z",
-        "status_state": "success",
-        "status_at": "2026-05-29T14:56:54Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 4863877593,
-        "sha": "c7706549f9d67917d2a9cd8baf578f5862de44ba",
-        "environment": "Production",
-        "created_at": "2026-05-29T14:56:27Z",
-        "status_state": "success",
-        "status_at": "2026-05-29T14:56:27Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 4863863933,
-        "sha": "1a67c9849aed8e76d0979225ab86a196773c2017",
-        "environment": "Production",
-        "created_at": "2026-05-29T14:55:21Z",
-        "status_state": "success",
-        "status_at": "2026-05-29T14:55:21Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 4860695738,
-        "sha": "9fcce7e7b566f9968b9214dab787a0563df8933c",
-        "environment": "Production",
-        "created_at": "2026-05-29T10:03:08Z",
-        "status_state": "success",
-        "status_at": "2026-05-29T10:03:08Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 4860590334,
-        "sha": "99e7568558f5d889d3dcfa58cdd20009f2ef7800",
-        "environment": "Production",
-        "created_at": "2026-05-29T09:52:25Z",
-        "status_state": "success",
-        "status_at": "2026-05-29T09:52:26Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 4860433193,
-        "sha": "5a8f42464847079542239dd2e42f646ae02e8f37",
-        "environment": "Production",
-        "created_at": "2026-05-29T09:36:23Z",
-        "status_state": "success",
-        "status_at": "2026-05-29T09:36:23Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 4858984542,
-        "sha": "6ccee65919bde45b2dec4e7800f94018347198c4",
-        "environment": "Production",
-        "created_at": "2026-05-29T07:05:41Z",
-        "status_state": "success",
-        "status_at": "2026-05-29T07:05:42Z",
-        "is_success": true,
-        "is_failure": false
       }
     ],
     "incidents": []
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-06-28T04:26:43Z",
+    "generated_at": "2026-06-29T04:46:10Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
