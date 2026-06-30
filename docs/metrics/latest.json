@@ -1,18 +1,18 @@
 {
   "window": {
-    "since": "2026-05-30T04:46:10Z",
-    "until": "2026-06-29T04:46:10Z",
+    "since": "2026-05-31T04:12:38Z",
+    "until": "2026-06-30T04:12:38Z",
     "days": 30
   },
   "summary": {
-    "lead_time_hours": 0.23,
-    "deployment_frequency_per_day": 1.2667,
+    "lead_time_hours": 0.17,
+    "deployment_frequency_per_day": 1.1667,
     "mttr_hours": null,
-    "change_failure_rate_percent": 11.63
+    "change_failure_rate_percent": 12.5
   },
   "counts": {
-    "merged_prs": 5,
-    "deployments_success": 38,
+    "merged_prs": 3,
+    "deployments_success": 35,
     "deployments_failure": 5,
     "incidents": 0
   },
@@ -35,21 +35,19 @@
         "title": "feat: add week14 final AI OSS delivery package",
         "merged_at": "2026-05-31T07:33:38Z",
         "first_commit_at": "2026-05-31T07:02:45Z"
-      },
-      {
-        "number": 62,
-        "title": "Add Week 13 Lean Startup Experiment Records",
-        "merged_at": "2026-05-30T16:29:12Z",
-        "first_commit_at": "2026-05-30T15:59:05Z"
-      },
-      {
-        "number": 37,
-        "title": "test: add week 12 coverage and api tests",
-        "merged_at": "2026-05-30T07:49:07Z",
-        "first_commit_at": "2026-05-30T07:42:02Z"
       }
     ],
     "deployments": [
+      {
+        "id": 5234423861,
+        "sha": "8a8b561b109c48e1ebd6bcb838d4ea42ca9d6dda",
+        "environment": "Production",
+        "created_at": "2026-06-29T04:46:43Z",
+        "status_state": "success",
+        "status_at": "2026-06-29T04:46:43Z",
+        "is_success": true,
+        "is_failure": false
+      },
       {
         "id": 5232761582,
         "sha": "768a079cff8d320b17a4f1dfc15b3b332f5c34dc",
@@ -439,53 +437,13 @@
         "status_at": "2026-05-31T04:39:10Z",
         "is_success": true,
         "is_failure": false
-      },
-      {
-        "id": 4873911449,
-        "sha": "d4f68faf504cf54035753ae8db822b217375b967",
-        "environment": "Production",
-        "created_at": "2026-05-30T16:29:23Z",
-        "status_state": "success",
-        "status_at": "2026-05-30T16:29:24Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 4871212778,
-        "sha": "e0a2fa192a0408c4a034421f9a02ed48a1ed0a5f",
-        "environment": "Production",
-        "created_at": "2026-05-30T07:54:52Z",
-        "status_state": "success",
-        "status_at": "2026-05-30T07:54:53Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 4871185292,
-        "sha": "b78f85c84b27ec72ea4a948be2f2fd91322eff8a",
-        "environment": "Production",
-        "created_at": "2026-05-30T07:49:20Z",
-        "status_state": "success",
-        "status_at": "2026-05-30T07:49:20Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 4870764033,
-        "sha": "508af918f7547c5e2ad092fa63d1c95ba30d2f0b",
-        "environment": "Production",
-        "created_at": "2026-05-30T06:18:04Z",
-        "status_state": "success",
-        "status_at": "2026-05-30T06:18:05Z",
-        "is_success": true,
-        "is_failure": false
       }
     ],
     "incidents": []
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-06-29T04:46:10Z",
+    "generated_at": "2026-06-30T04:12:38Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
