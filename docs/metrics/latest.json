@@ -1,18 +1,18 @@
 {
   "window": {
-    "since": "2026-05-31T04:12:38Z",
-    "until": "2026-06-30T04:12:38Z",
+    "since": "2026-06-01T04:41:18Z",
+    "until": "2026-07-01T04:41:18Z",
     "days": 30
   },
   "summary": {
-    "lead_time_hours": 0.17,
-    "deployment_frequency_per_day": 1.1667,
+    "lead_time_hours": 0.0,
+    "deployment_frequency_per_day": 1.1333,
     "mttr_hours": null,
-    "change_failure_rate_percent": 12.5
+    "change_failure_rate_percent": 12.82
   },
   "counts": {
-    "merged_prs": 3,
-    "deployments_success": 35,
+    "merged_prs": 2,
+    "deployments_success": 34,
     "deployments_failure": 5,
     "incidents": 0
   },
@@ -29,15 +29,19 @@
         "title": "chore(deps-dev): bump @playwright/test from 1.60.0 to 1.61.0 in the npm-development group",
         "merged_at": "2026-06-22T00:10:51Z",
         "first_commit_at": "2026-06-22T00:10:36Z"
-      },
-      {
-        "number": 63,
-        "title": "feat: add week14 final AI OSS delivery package",
-        "merged_at": "2026-05-31T07:33:38Z",
-        "first_commit_at": "2026-05-31T07:02:45Z"
       }
     ],
     "deployments": [
+      {
+        "id": 5248830877,
+        "sha": "5a8e79d77c1916976678916b919f6572d01bbbd8",
+        "environment": "Production",
+        "created_at": "2026-06-30T04:13:03Z",
+        "status_state": "success",
+        "status_at": "2026-06-30T04:13:03Z",
+        "is_success": true,
+        "is_failure": false
+      },
       {
         "id": 5234423861,
         "sha": "8a8b561b109c48e1ebd6bcb838d4ea42ca9d6dda",
@@ -417,33 +421,13 @@
         "status_at": "2026-06-01T05:00:50Z",
         "is_success": true,
         "is_failure": false
-      },
-      {
-        "id": 4878248280,
-        "sha": "a01903c225250db26005480ac016d89774a412e9",
-        "environment": "Production",
-        "created_at": "2026-05-31T07:33:49Z",
-        "status_state": "success",
-        "status_at": "2026-05-31T07:33:49Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 4877493338,
-        "sha": "f81c2aba4d849d4ce4680779e56d1afe44516882",
-        "environment": "Production",
-        "created_at": "2026-05-31T04:39:09Z",
-        "status_state": "success",
-        "status_at": "2026-05-31T04:39:10Z",
-        "is_success": true,
-        "is_failure": false
       }
     ],
     "incidents": []
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-06-30T04:12:38Z",
+    "generated_at": "2026-07-01T04:41:18Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
