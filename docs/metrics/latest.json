@@ -1,18 +1,18 @@
 {
   "window": {
-    "since": "2026-06-21T03:26:05Z",
-    "until": "2026-07-21T03:26:05Z",
+    "since": "2026-06-22T03:24:45Z",
+    "until": "2026-07-22T03:24:45Z",
     "days": 30
   },
   "summary": {
     "lead_time_hours": 0.0,
-    "deployment_frequency_per_day": 1.0333,
+    "deployment_frequency_per_day": 1.0,
     "mttr_hours": null,
     "change_failure_rate_percent": 0.0
   },
   "counts": {
-    "merged_prs": 2,
-    "deployments_success": 31,
+    "merged_prs": 1,
+    "deployments_success": 30,
     "deployments_failure": 0,
     "incidents": 0
   },
@@ -23,15 +23,19 @@
         "title": "chore(deps-dev): bump @playwright/test from 1.61.0 to 1.61.1 in the npm-development group",
         "merged_at": "2026-06-29T00:11:44Z",
         "first_commit_at": "2026-06-29T00:11:30Z"
-      },
-      {
-        "number": 68,
-        "title": "chore(deps-dev): bump @playwright/test from 1.60.0 to 1.61.0 in the npm-development group",
-        "merged_at": "2026-06-22T00:10:51Z",
-        "first_commit_at": "2026-06-22T00:10:36Z"
       }
     ],
     "deployments": [
+      {
+        "id": 5532295600,
+        "sha": "560fe2d6c17b98b57cf9e549d6880c6d1f38c829",
+        "environment": "Production",
+        "created_at": "2026-07-21T03:26:31Z",
+        "status_state": "success",
+        "status_at": "2026-07-21T03:26:33Z",
+        "is_success": true,
+        "is_failure": false
+      },
       {
         "id": 5516556245,
         "sha": "896d4526894ae257f25e31c2d8c520449c34e2fb",
@@ -321,33 +325,13 @@
         "status_at": "2026-06-22T05:11:21Z",
         "is_success": true,
         "is_failure": false
-      },
-      {
-        "id": 5144902847,
-        "sha": "386aeb019d9890a0a019c7583944dc750d06b218",
-        "environment": "Production",
-        "created_at": "2026-06-22T00:11:05Z",
-        "status_state": "success",
-        "status_at": "2026-06-22T00:11:05Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 5138471279,
-        "sha": "bac0273cf00b1fb2fd6eeae8c20f0d2f94501c2b",
-        "environment": "Production",
-        "created_at": "2026-06-21T05:03:08Z",
-        "status_state": "success",
-        "status_at": "2026-06-21T05:03:09Z",
-        "is_success": true,
-        "is_failure": false
       }
     ],
     "incidents": []
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-07-21T03:26:05Z",
+    "generated_at": "2026-07-22T03:24:45Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
