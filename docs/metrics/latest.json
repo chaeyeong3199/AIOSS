@@ -1,31 +1,34 @@
 {
   "window": {
-    "since": "2026-06-28T03:17:16Z",
-    "until": "2026-07-28T03:17:16Z",
+    "since": "2026-06-29T03:19:52Z",
+    "until": "2026-07-29T03:19:52Z",
     "days": 30
   },
   "summary": {
-    "lead_time_hours": 0.0,
-    "deployment_frequency_per_day": 1.0,
+    "lead_time_hours": null,
+    "deployment_frequency_per_day": 0.9667,
     "mttr_hours": null,
     "change_failure_rate_percent": 0.0
   },
   "counts": {
-    "merged_prs": 1,
-    "deployments_success": 30,
+    "merged_prs": 0,
+    "deployments_success": 29,
     "deployments_failure": 0,
     "incidents": 0
   },
   "events": {
-    "merged_prs": [
-      {
-        "number": 70,
-        "title": "chore(deps-dev): bump @playwright/test from 1.61.0 to 1.61.1 in the npm-development group",
-        "merged_at": "2026-06-29T00:11:44Z",
-        "first_commit_at": "2026-06-29T00:11:30Z"
-      }
-    ],
+    "merged_prs": [],
     "deployments": [
+      {
+        "id": 5633513366,
+        "sha": "af06de9fd6a0abe20316a032f60d9bab3f9d599e",
+        "environment": "Production",
+        "created_at": "2026-07-28T03:17:43Z",
+        "status_state": "success",
+        "status_at": "2026-07-28T03:17:44Z",
+        "is_success": true,
+        "is_failure": false
+      },
       {
         "id": 5616836502,
         "sha": "569fdc4c54d0fe6d651667ea8fbf5dc9c3e66018",
@@ -305,33 +308,13 @@
         "status_at": "2026-06-29T04:46:43Z",
         "is_success": true,
         "is_failure": false
-      },
-      {
-        "id": 5232761582,
-        "sha": "768a079cff8d320b17a4f1dfc15b3b332f5c34dc",
-        "environment": "Production",
-        "created_at": "2026-06-29T00:12:01Z",
-        "status_state": "success",
-        "status_at": "2026-06-29T00:12:02Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 5226013205,
-        "sha": "4ec4e231b1ce03a32d613b3da8bd2504d59bd770",
-        "environment": "Production",
-        "created_at": "2026-06-28T04:27:20Z",
-        "status_state": "success",
-        "status_at": "2026-06-28T04:27:20Z",
-        "is_success": true,
-        "is_failure": false
       }
     ],
     "incidents": []
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-07-28T03:17:16Z",
+    "generated_at": "2026-07-29T03:19:52Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
