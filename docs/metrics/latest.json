@@ -1,24 +1,34 @@
 {
   "window": {
-    "since": "2026-07-27T01:45:22Z",
-    "until": "2026-08-26T01:45:22Z",
+    "since": "2026-07-28T08:48:13Z",
+    "until": "2026-08-27T08:48:13Z",
     "days": 30
   },
   "summary": {
     "lead_time_hours": null,
-    "deployment_frequency_per_day": 1.0,
+    "deployment_frequency_per_day": 0.9667,
     "mttr_hours": null,
     "change_failure_rate_percent": 0.0
   },
   "counts": {
     "merged_prs": 0,
-    "deployments_success": 30,
+    "deployments_success": 29,
     "deployments_failure": 0,
     "incidents": 0
   },
   "events": {
     "merged_prs": [],
     "deployments": [
+      {
+        "id": 6095447168,
+        "sha": "acf941c31da74169ca78dddfc08491fe571e1165",
+        "environment": "Production",
+        "created_at": "2026-08-26T01:45:46Z",
+        "status_state": "success",
+        "status_at": "2026-08-26T01:45:46Z",
+        "is_success": true,
+        "is_failure": false
+      },
       {
         "id": 6074741826,
         "sha": "6a26d4b0b8e1759ffcc70e5017d91c4ef2478a52",
@@ -298,33 +308,13 @@
         "status_at": "2026-07-29T03:20:20Z",
         "is_success": true,
         "is_failure": false
-      },
-      {
-        "id": 5633513366,
-        "sha": "af06de9fd6a0abe20316a032f60d9bab3f9d599e",
-        "environment": "Production",
-        "created_at": "2026-07-28T03:17:43Z",
-        "status_state": "success",
-        "status_at": "2026-07-28T03:17:44Z",
-        "is_success": true,
-        "is_failure": false
-      },
-      {
-        "id": 5616836502,
-        "sha": "569fdc4c54d0fe6d651667ea8fbf5dc9c3e66018",
-        "environment": "Production",
-        "created_at": "2026-07-27T03:47:17Z",
-        "status_state": "success",
-        "status_at": "2026-07-27T03:47:18Z",
-        "is_success": true,
-        "is_failure": false
       }
     ],
     "incidents": []
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-08-26T01:45:22Z",
+    "generated_at": "2026-08-27T08:48:13Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
