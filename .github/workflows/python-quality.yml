@@ -25,7 +25,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
 
       - name: Set up Python and cache dependencies
         id: python-setup
@@ -82,7 +82,7 @@ jobs:
 
       - name: Upload test results
         if: always() && inputs.upload-results && (hashFiles('test-results/pytest-results.xml') != '')
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: pytest-results-${{ matrix.os }}-py${{ matrix.python-version }}
           path: test-results/
