@@ -1,7 +1,7 @@
 {
   "window": {
-    "since": "2026-10-17T05:56:48Z",
-    "until": "2026-11-16T05:56:48Z",
+    "since": "2026-10-18T07:33:57Z",
+    "until": "2026-11-17T07:33:57Z",
     "days": 30
   },
   "summary": {
@@ -19,6 +19,16 @@
   "events": {
     "merged_prs": [],
     "deployments": [
+      {
+        "id": 7816702393,
+        "sha": "e405553d6971c3c8f1391a734dea919477bc536e",
+        "environment": "Production",
+        "created_at": "2026-11-16T05:57:14Z",
+        "status_state": "success",
+        "status_at": "2026-11-16T05:57:15Z",
+        "is_success": true,
+        "is_failure": false
+      },
       {
         "id": 7799326160,
         "sha": "e242c1df18cd7289002f54148ac19d7c2c76c0fc",
@@ -298,23 +308,13 @@
         "status_at": "2026-10-19T04:16:28Z",
         "is_success": true,
         "is_failure": false
-      },
-      {
-        "id": 7149726009,
-        "sha": "70721f03f65b6dd7c99ac2a7ea94a97920d5dbbb",
-        "environment": "Production",
-        "created_at": "2026-10-18T04:07:09Z",
-        "status_state": "success",
-        "status_at": "2026-10-18T04:07:09Z",
-        "is_success": true,
-        "is_failure": false
       }
     ],
     "incidents": []
   },
   "meta": {
     "repo": "chaeyeong3199/AIOSS",
-    "generated_at": "2026-11-16T05:56:48Z",
+    "generated_at": "2026-11-17T07:33:57Z",
     "notes": [
       "Lead Time is approximated as first commit in merged PR to merge time.",
       "Deployment Frequency and Change Failure Rate are computed from deployment statuses in production-like environments.",
